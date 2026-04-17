@@ -2,7 +2,7 @@
 
 Persönliches Portfolio-Website von Fatih Demirtas, Data Analyst aus Bamberg.
 
-Live: [demirtas-fatih.github.io](https://demirtas-fatih.github.io)
+Live: [(https://demirtas-fatih.github.io/demirtas-fatih/)](https://demirtas-fatih.github.io/demirtas-fatih/)
 
 ## Über das Projekt
 
