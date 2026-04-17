@@ -1,8 +1,8 @@
-# Vusal Aliyev — Portfolio
+# Fatih Demirtas — Portfolio
 
-Persönliches Portfolio-Website von Vusal Aliyev, Data Analyst aus Bamberg.
+Persönliches Portfolio-Website von Fatih Demirtas, Data Analyst aus Bamberg.
 
-Live: [aliyev-vusal.github.io](https://aliyev-vusal.github.io)
+Live: [demirtas-fatih.github.io](https://demirtas-fatih.github.io)
 
 ## Über das Projekt
 
