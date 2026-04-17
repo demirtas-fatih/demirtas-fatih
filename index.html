@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Fatih Dmeirtas — Portfolio</title>
+  <meta name="description" content="Persönliches Portfolio von Fatih Demirtas: Projekte, Kenntnisse, Lebenslauf und Kontakt." />
+  <meta name="keywords" content="Portfolio, Data Analyst, Power BI, Python, SQL, Bamberg" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Fatih Demirtas — Portfolio" />
+  <meta property="og:description" content="Projekte, Kenntnisse, Lebenslauf & Kontakt." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://demirtas-fatih.github.io/" />
+  <meta property="og:image" content="assets/img/og-image.png" />
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/favicon-32x32.png" type="image/png">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Vendor CSS (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
+
+  <style>
+    /* Language Switcher */
+    .lang-switcher {
+      position: fixed;
+      bottom: 70px;
+      right: 15px;
+      z-index: 99998;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: #fff;
+      border: 2px solid #0563bb;
+      color: #0563bb;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      padding: 5px 10px;
+      border-radius: 20px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+      transition: background 0.2s, color 0.2s;
+      width: 40px;
+      text-align: center;
+    }
+
+    .lang-btn:hover {
+      background: #0563bb;
+      color: #fff;
+    }
+
+    .lang-btn.active {
+      background: #0563bb;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Language Switcher -->
+  <div class="lang-switcher" role="group" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('de')" id="btn-de" aria-label="Deutsch">DE</button>
+    <button class="lang-btn" onclick="setLang('en')" id="btn-en" aria-label="English">EN</button>
+    <button class="lang-btn" onclick="setLang('az')" id="btn-az" aria-label="Azərbaycan">AZ</button>
+  </div>
+
+  <!-- Mobile nav toggle -->
+  <button type="button" class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
+    <i class="bx bx-menu"></i>
+  </button>
+
+  <!-- Header -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href="#hero"><i class="bx bx-home"></i><span data-i18n="nav_home">Startseite</span></a></li>
+        <li><a href="#about"><i class="bx bx-user"></i><span data-i18n="nav_about">Über mich</span></a></li>
+        <li><a href="#skills"><i class="bx bx-server"></i><span data-i18n="nav_skills">Kenntnisse</span></a></li>
+        <li><a href="#resume"><i class="bx bx-file-blank"></i><span data-i18n="nav_resume">Lebenslauf</span></a></li>
+        <li><a href="#projects"><i class="bx bx-book-content"></i><span data-i18n="nav_projects">Projekte</span></a></li>
+        <li><a href="#contact"><i class="bx bx-mail-send"></i><span data-i18n="nav_contact">Kontakt</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="40">
+      <h1>Fatih Demirtas</h1>
+      <p><span id="typed-el"></span></p>
+
+      <div class="social-links">
+        <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" class="github" aria-label="GitHub">
+          <i class="bx bxl-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener" class="linkedin"
+          aria-label="LinkedIn">
+          <i class="bx bxl-linkedin"></i>
+        </a>
+        <a href="mailto:fatihdemirtask@gmail.com" class="gmail" aria-label="Email">
+          <i class="bx bx-mail-send"></i>
+        </a>
+        <a href="https://www.researchgate.net/profile/Vusal-Aliyev-2" target="_blank" rel="noopener"
+          class="researchgate" aria-label="ResearchGate">
+          <span class="iconify-inline" data-icon="fa-brands:researchgate" data-width="24" data-height="24"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_about">Über mich</h2>
+        </div>
+
+        <div class="row mt-md-5">
+          <div class="col-lg-4">
+            <img src="assets/img/Fatih_bewerbug_Photo.png" class="img-fluid img-thumbnail shadow-lg" alt="Profile photo"
+              loading="lazy">
+          </div>
+
+          <div class="col-lg-8 pt-4 pt-lg-0 content">
+            <h3 data-i18n="about_title">Business Analyst &amp; Data Ingenieur / Analyst</h3>
+            <p class="mt-3" data-i18n="about_text">
+              Lösungsorientierter Datenexperte mit Erfahrung in BI-Engineering, Data Engineering und Analytics.
+              Spezialisiert auf den Entwurf von Datenmodellen, den Aufbau automatisierter ETL/ELT-Pipelines und
+              skalierbare Lakehouse-Architekturen mit Microsoft Fabric (Lakehouse, Dataflows, Pipelines).
+              Kenntnisse in Power BI, SQL und Python sowie IoT-Konzepten und Systemkonnektivität.
+              Erfahren in der Integration von Betriebs- und IoT-Daten in einheitliche Analyseumgebungen und der
+              Umwandlung komplexer Datensätze in verwertbare Erkenntnisse. Starke Kommunikationsfähigkeiten in
+              Deutsch und Englisch.
+            </p>
+
+            <div class="row mt-3">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bx bx-right-arrow"></i><strong data-i18n="label_email">E-Mail:</strong>
+                    <a href="mailto:fatihdemirtask@gmail.com">fatihdemirtask@gmail.com</a></li>
+                  <li><i class="bx bx-right-arrow"></i><strong data-i18n="label_website">Webseite:</strong>
+                    <a href="https://demirtas-fatih.github.io" target="_blank" rel="noopener">demirtas-fatih.github.io</a></li>
+                  <li><i class="bx bx-right-arrow"></i><strong>LinkedIn:</strong>
+                    <a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener">linkedin.com/in/fatih-demirtas47</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bx bx-right-arrow"></i><strong data-i18n="label_city">Stadt:</strong>
+                    <span data-i18n="about_city_val">Bamberg, Deutschland</span></li>
+                  <li><i class="bx bx-right-arrow"></i><strong data-i18n="label_degree">Abschluss:</strong>
+                    <span data-i18n="about_degree_val">B.Sc. Wirtschaftsinformatik</span></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_skills">Kenntnisse</h2>
+        </div>
+
+        <h4 class="mt-4" data-i18n="skills_programming">Programmiersprachen</h4>
+        <div class="skills-grid">
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+          <div><img src="assets/img/R.jpeg" alt="R"><p>R</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+          <div><img src="assets/img/Kusto.svg" alt="KSQL"><p>KSQL</p></div>
+        </div>
+
+        <h4 class="mt-5" data-i18n="skills_frameworks">Frameworks &amp; Werkzeuge</h4>
+        <div class="skills-grid">
+          <div><img src="assets/img/Power-BI.png" alt="Power BI"><p>Power BI</p></div>
+          <div><img src="assets/img/fabric.png" alt="Fabric"><p>Microsoft Fabric</p></div>
+          <div><img src="assets/img/sql_database.png" alt="SQL Database"><p>SQL Database</p></div>
+          <div><img src="assets/img/Tableau.png" alt="Tableau"><p>Tableau</p></div>
+          <div><img src="assets/img/Qlik_Logo.svg" alt="Qlik"><p>Qlik</p></div>
+          <div><img src="assets/img/Apache Airflow.png" alt="Airflow"><p>Apache Airflow</p></div>
+          <div><img src="assets/img/icons8-apache-spark-48.png" alt="Spark"><p>Spark</p></div>
+          <div><img src="assets/img/data_factory.png" alt="Data Factory"><p>Data Factory</p></div>
+          <div><img src="assets/img/one_lake.png" alt="One Lake"><p>One Lake</p></div>
+          <div><img src="assets/img/data_warehouse.png" alt="Data Warehouse"><p>Data Warehouse</p></div>
+          <div><img src="assets/img/dataflow.png" alt="Dataflow"><p>Dataflow</p></div>
+          <div><img src="assets/img/Excel.png" alt="Excel"><p>Excel</p></div>
+          <div><img src="assets/img/TYPO3.png" alt="TYPO3"><p>TYPO3</p></div>
+          <div><img src="assets/img/Visual_Studio_Code.png" alt="VS Code"><p>VS Code</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><p>MySQL</p></div>
+          <div><img src="assets/img/SSMS_21_icon.png" alt="SSMS"><p>SSMS</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><p>Git</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecolab/googlecolab-original.svg" alt="Google Colab"><p>Google Colab</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter Notebook"><p>Jupyter Notebook</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy"><p>NumPy</p></div>
+          <div><img src="assets/img/docker-logo-blue.png" alt="Docker"><p>Docker</p></div>
+        </div>
+
+        <h4 class="mt-5" data-i18n="skills_os">Betriebssysteme</h4>
+        <div class="skills-grid">
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg" alt="macOS"><p>macOS</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux"><p>Linux</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg" alt="Windows"><p>Windows</p></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_resume">Lebenslauf</h2>
+        </div>
+
+        <div class="row">
+
+          <!-- Work Experience -->
+          <div class="col-lg-6">
+            <h3 class="resume-title" data-i18n="resume_work">Berufserfahrung</h3>
+
+            <div class="resume-item">
+              <h4 data-i18n="job1_title">Industriepraktikant — AKIPAS-Projekt</h4>
+              <h5 data-i18n="job1_period">Mai 2025 – Jan 2026</h5>
+              <p class="font-italic">Rogers Corporation (AES – Advanced Electronics Solutions), Eschenbach i.d. OPf, Germany</p>
+              <ul>
+                <li data-i18n="job1_b1">Mitarbeit am Forschungsprojekt „AKIPAS – Augmented AI-Module für Produktionsassistenzsysteme in der integrierten Fertigung metallisierter Keramiksubstrate für die Leistungselektronik".</li>
+                <li data-i18n="job1_b2">Erhebung und Bereinigung von Daten aus primären und sekundären Quellen für Analytics- und KI-Anwendungsfälle.</li>
+                <li data-i18n="job1_b3">Aufbau und Pflege eines DBMS; Migration vorhandener Produktionsdaten in das neue System.</li>
+                <li data-i18n="job1_b4">Erstellung von Dashboards und Datenauswertungen zur Unterstützung der Produktionsoptimierung.</li>
+                <li data-i18n="job1_b5">Operationalisierung von Prozessmodellen im Data-Science-Kontext und Dokumentation von Best Practices.</li>
+                <li data-i18n="job1_b6">Ableitung von Optimierungsempfehlungen mittels statistischer Methoden und Präsentation der Ergebnisse vor Stakeholdern.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="job2_title">Wissenschaftliche Hilfskraft</h4>
+              <h5 data-i18n="job2_period">Mrz 2023 – Heute</h5>
+              <p class="font-italic">Otto-Friedrich-Universität Bamberg, Bamberg, Germany</p>
+              <ul>
+                <li data-i18n="job2_b1">Unterstützung akademischer Forschungsprojekte mit Datenanalyse.</li>
+                <li data-i18n="job2_b2">Entwicklung und Optimierung von Datenbanken zur Sicherstellung präziser Forschungsdatensätze.</li>
+                <li data-i18n="job2_b3">Anwendung statistischer Analysen, Datenvisualisierung und Prozessoptimierungsverfahren.</li>
+                <li data-i18n="job2_b4">Mitwirkung bei der Erstellung akademischer Publikationen und internem Reporting.</li>
+                <li data-i18n="job2_b5">Arbeit mit Programmiertools (Python, R) und IT-Projektmanagementaufgaben.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="job3_title">Werkstudent — Digitalisierung &amp; IT</h4>
+              <h5 data-i18n="job3_period">Mrz 2024 – Mrz 2025</h5>
+              <p class="font-italic">Schaeffler Technologies, Herzogenaurach, Germany</p>
+              <ul>
+                <li data-i18n="job3_b1">Teil des Teams Connectivity &amp; Process Control Solutions im Industrial Engineering.</li>
+                <li data-i18n="job3_b2">Beitrag zu Digitalisierungs- und Industrie-4.0-Initiativen durch Integration von IT/OT-Systemen.</li>
+                <li data-i18n="job3_b3">Entwurf und Standardisierung von Dashboards mit Power BI und Python.</li>
+                <li data-i18n="job3_b4">Verbesserung von Datenverwaltungsprozessen und Reporting-Workflows.</li>
+                <li data-i18n="job3_b5">Zusammenarbeit mit funktionsübergreifenden Teams zur Implementierung digitaler Lösungen in der Produktion.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="job4_title">Werkstudent — DigiOps für Digital &amp; Automation</h4>
+              <h5 data-i18n="job4_period">Feb 2023 – Mrz 2024</h5>
+              <p class="font-italic">Siemens Healthineers, Forchheim, Germany</p>
+              <ul>
+                <li data-i18n="job4_b1">Unterstützung der DigiOps-Abteilungen für Digital &amp; Automation (Service Sales &amp; Transformation).</li>
+                <li data-i18n="job4_b2">Erstellung von Dashboards und automatisierten Berichten mit Power BI, Excel (Pivot, VBA) und SAP.</li>
+                <li data-i18n="job4_b3">Durchführung statistischer Analysen, Abweichungsberichte und Sicherstellung der Datenqualität.</li>
+                <li data-i18n="job4_b4">Cloud-Computing und Datenintegration für Produktionstransformationsprojekte eingesetzt.</li>
+                <li data-i18n="job4_b5">Unterstützung agiler Teams in digitalen Projekten und Beitrag zu Optimierungsinitiativen.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="job5_title">Datenqualitätsanalyst</h4>
+              <h5 data-i18n="job5_period">Jan 2017 – Okt 2019</h5>
+              <p class="font-italic">State Statistical Committee of Azerbaijan Republic, Baku, Azerbaijan</p>
+              <ul>
+                <li data-i18n="job5_b1">Erhebung, Validierung und Analyse von Dienstleistungsstatistiken auf nationaler Ebene.</li>
+                <li data-i18n="job5_b2">Entwurf und Pflege von Datenbanken für zuverlässiges statistisches Reporting.</li>
+                <li data-i18n="job5_b3">Qualitätssicherung und Identifikation von Inkonsistenzen in großen Datensätzen.</li>
+                <li data-i18n="job5_b4">Erstellung statistischer Berichte für Regierung und Stakeholder.</li>
+                <li data-i18n="job5_b5">Sicherstellung der Einhaltung internationaler Standards für Datenverwaltung und Reporting.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="job6_title">Praktikant</h4>
+              <h5 data-i18n="job6_period">Jun 2015 – Jul 2016</h5>
+              <p class="font-italic">Amrahbank, Goranboy District, Azerbaijan</p>
+              <ul>
+                <li data-i18n="job6_b1">Unterstützung des Geschäftsbetriebs und der Verarbeitung von Finanzdaten.</li>
+                <li data-i18n="job6_b2">Arbeit mit der Bankensoftware Temenos T24 für Dateneingabe und Reporting.</li>
+                <li data-i18n="job6_b3">Unterstützung der Filialmitarbeiter bei Kontoverwaltung und Kundendienstprozessen.</li>
+                <li data-i18n="job6_b4">Erste Einblicke in finanzielle IT-Systeme und Reporting-Tools gewonnen.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Education & Certifications -->
+          <div class="col-lg-6">
+            <h3 class="resume-title" data-i18n="resume_education">Bildung</h3>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu1_title">M.Sc. Internationales Informationssystemmanagement</h4>
+              <h5 data-i18n="edu1_period">Okt 2023 – Okt 2025</h5>
+              <p class="font-italic">Otto-Friedrich-Universität Bamberg, Germany</p>
+              <ul>
+                <li data-i18n="edu1_b1">Masterstudium mit Schwerpunkt Informationssysteme, Data Science und Business Intelligence.</li>
+                <li data-i18n="edu1_b2">Kompetenzen: Experimentelles Design, Business Intelligence, Python, R, Optimierung, Projektplanung, Cloud Computing, Git.</li>
+                <li data-i18n="edu1_b3">Ausgebaute Kompetenzen in Data Science, Projektmanagement, Datenbanken und Management.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu2_title">B.Sc. Informationssysteme</h4>
+              <h5 data-i18n="edu2_period">Okt 2021 – Okt 2023</h5>
+              <p class="font-italic">Otto-Friedrich-Universität Bamberg, Germany</p>
+              <ul>
+                <li data-i18n="edu2_b1">Angewandtes Wissen in Datenbanken, Programmierung, Cloud Computing und Optimierung.</li>
+                <li data-i18n="edu2_b2">Gestärkte Kenntnisse in Englisch, Datenanalyse und Projektmanagement.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu3_title">B.Sc. Wirtschaftswissenschaften</h4>
+              <h5 data-i18n="edu3_period">Okt 2009 – Jun 2013</h5>
+              <p class="font-italic">Azerbaijan State University of Economics (UNEC), Baku, Azerbaijan</p>
+              <ul>
+                <li data-i18n="edu3_b1">Bachelorabschluss in Wirtschaftswissenschaften mit Schwerpunkt Management und Geschäftsprozesse.</li>
+                <li data-i18n="edu3_b2">Grundlagen in Wirtschaftsanalyse, Statistik und Organisationsmanagement erworben.</li>
+              </ul>
+            </div>
+
+            <h3 class="resume-title" data-i18n="resume_certs">Zertifikate</h3>
+            <ul class="cert-list">
+              <li>
+                <a href="https://learn.microsoft.com/en-us/users/aliyevvusalsphzadp2-9647/credentials/9282d54b6d4c7883?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+                  target="_blank" rel="noopener">
+                  <img src="assets/img/ms_fabric_data_16_color.png" alt="Fabric Data Engineer Associate">
+                  Microsoft Certified: Fabric Data Engineer Associate
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert1_info">Ausgestellt Dez 2025 • Credential ID: 9282D54B6D4C7883 • Kenntnisse: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms</small>
+              </li>
+
+              <li>
+                <a href="https://learn.microsoft.com/api/credentials/share/en-us/AliyevVusalSPHZADP2-9647/B5755D0006DA82F2?sharingId"
+                  target="_blank" rel="noopener">
+                  <img src="assets/img/Power-BI.png" alt="Microsoft Power BI">
+                  Microsoft Certified: Power BI Data Analyst Associate
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert2_info">Ausgestellt Feb 2025 • Credential ID: B5755D0006DA82F2 • Kenntnisse: Power BI, Data Analysis, Data Visualization, DAX, Power Query, Data Modeling, Business Intelligence (BI), Dashboard Design, Reporting, KPIs</small>
+              </li>
+
+              <li>
+                <a href="assets/img/COIN_MIT.png" target="_blank" rel="noopener">
+                  <img src="assets/img/MIT.png" alt="MIT">
+                  Mindreading with AI — Collaborative Innovation Networks (MIT)
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert3_info">Ausgestellt Aug 2024 • Kenntnisse: Projektmanagement, Datenvisualisierung, Statistische Analyse</small>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/9d0ba215ceec274bfbbc506a39f2e987028486490db319b8c12f96b65a8b267e"
+                  target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/atlassian" alt="Atlassian">
+                  Atlassian Agile Project Management — Professional Certificate
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert4_info">Ausgestellt Feb 2025 • Kenntnisse: Scrum, Agile Testing, Projektplanung, Jira</small>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/acb95663f021f99014b0bc1a71b429fe86786bf49c20177e24b1cc5374368e8b"
+                  target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/atlassian" alt="Atlassian">
+                  Atlassian IT Service Management (ITSM) — Professional Certificate
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert5_info">Ausgestellt Feb 2025 • Kenntnisse: ITSM, Monitoring, Change Management</small>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/8e7c91c36be967b4b7b3907fa7486a6794d6b7fba1ac239ffc87f35710486c0a"
+                  target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/apacheairflow" alt="Astronomer/Airflow">
+                  Data Engineering Foundations — Professional Certificate (Astronomer)
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert6_info">Ausgestellt Feb 2025 • Kenntnisse: Data Engineering, SQL, Warehousing, Governance</small>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/d27105fcb7ea94899468b8260950bd89610b49480e5d3cbb4405a239720595b9"
+                  target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/docker" alt="Docker">
+                  Docker Foundations — Professional Certificate
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert7_info">Ausgestellt Feb 2025 • Kenntnisse: Docker-Produkte, Containerisierung</small>
+              </li>
+
+              <li>
+                <a href="https://www.linkedin.com/learning/certificates/b5138addabf82b02e50d4fd432c8fc225c0d57a6b444c676f9f7eba396be2a5b"
+                  target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/dbeaver" alt="DBeaver">
+                  DBeaver — Certificate of Completion
+                  <i class="bx bx-link-external" aria-hidden="true"></i>
+                </a>
+                <small data-i18n="cert8_info">Kenntnisse: Datenbanken, DBeaver</small>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_projects">Projekte</h2>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+          <!-- Project 1 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <div id="project1Carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/img/Projects_pictures/WIAI_Uberblick.png" class="img-fluid img-thumbnail" alt="WIAI Project image 1" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/Studierenden_Entwicklung.png" class="img-fluid img-thumbnail" alt="WIAI Project image 2" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/Abschlussanlyse.png" class="img-fluid img-thumbnail" alt="WIAI Project image 3" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/Statistischen_Visio.png" class="img-fluid img-thumbnail" alt="WIAI Project image 4" loading="lazy">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#project1Carousel" role="button" data-slide="prev" aria-label="Previous">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#project1Carousel" role="button" data-slide="next" aria-label="Next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener">WIAI Project</a>
+                <div class="portfolio-links">
+                  <a href="assets/img/Projects_pictures/WIAI_Uberblick.png" title="Preview"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/Studierenden_Entwicklung.png" title="Preview"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/Abschlussanlyse.png" title="Preview"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/Statistischen_Visio.png" title="Preview"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Pollmeier Power BI -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <div id="project3Carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/img/Projects_pictures/Pollmeier_1.png" class="img-fluid img-thumbnail" alt="Pollmeier Überblick" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/Pollmeier_2.png" class="img-fluid img-thumbnail" alt="Pollmeier Qualität" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/Pollmeier_3.png" class="img-fluid img-thumbnail" alt="Pollmeier Fehleranalyse" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/Pollmeier_4.png" class="img-fluid img-thumbnail" alt="Pollmeier Ausbeute" loading="lazy">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#project3Carousel" role="button" data-slide="prev" aria-label="Previous">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#project3Carousel" role="button" data-slide="next" aria-label="Next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+              <div class="portfolio-info">
+                <a href="assets/Pro/Pollmeier.pbix" download><span data-i18n="proj_pollmeier_title">Pollmeier – Power BI Dashboard</span></a>
+                <div class="portfolio-links">
+                  <a href="assets/img/Projects_pictures/Pollmeier_1.png" title="Überblick"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/Pollmeier_2.png" title="Qualität"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/Pollmeier_3.png" title="Fehleranalyse"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/Pollmeier_4.png" title="Ausbeute"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <div id="project2Carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="assets/img/Projects_pictures/AKIPAS_1.png" class="img-fluid img-thumbnail" alt="AKIPAS image 1" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/AKIPAS_2.png" class="img-fluid img-thumbnail" alt="AKIPAS image 2" loading="lazy">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="assets/img/Projects_pictures/AKIPAS_3.png" class="img-fluid img-thumbnail" alt="AKIPAS image 3" loading="lazy">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#project2Carousel" role="button" data-slide="prev" aria-label="Previous">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#project2Carousel" role="button" data-slide="next" aria-label="Next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+              </div>
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener">AKIPAS</a>
+                <div class="portfolio-links">
+                  <a href="assets/img/Projects_pictures/AKIPAS_1.png" title="Preview"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/AKIPAS_2.png" title="Preview"><i class="bx bx-plus"></i></a>
+                  <a href="assets/img/Projects_pictures/AKIPAS_3.png" title="Preview"><i class="bx bx-plus"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_contact">Kontakt</h2>
+        </div>
+        <p><a href="mailto:fatihdemirtask@gmail.com"><i class="bx bx-mail-send"></i> fatihdemirtask@gmail.com</a></p>
+        <p><i class="bx bx-phone"></i> +49 1525 54501791</p>
+        <p><a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i> LinkedIn</a></p>
+        <p><a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener"><i class="bx bxl-github"></i> GitHub</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Fatih Demirtas</h3>
+      <div class="social-links">
+        <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" class="github"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+        <a href="mailto:fatihdemirtask@gmail.com" class="gmail"><i class="bx bx-mail-send"></i></a>
+      </div>
+      <div class="copyright">© 2025 <strong><span>Fatih Demirtas</span></strong>. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+  <div id="preloader" aria-hidden="true"></div>
+
+  <!-- Vendor JS (CDN) -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Main JS -->
+  <script src="assets/js/main.js"></script>
+
+  <!-- i18n Script -->
+  <script>
+    const translations = {
+      de: {
+        nav_home: "Startseite",
+        nav_about: "Über mich",
+        nav_skills: "Kenntnisse",
+        nav_resume: "Lebenslauf",
+        nav_projects: "Projekte",
+        nav_contact: "Kontakt",
+        typed_items: ["Data Analyst", "BI-Entwickler", "Data Engineering"],
+        about_title: "BI & Data Ingenieur / Analyst",
+        about_text: "Lösungsorientierter Datenexperte mit Erfahrung in BI-Engineering, Data Engineering und Analytics. Spezialisiert auf den Entwurf von Datenmodellen, den Aufbau automatisierter ETL/ELT-Pipelines und skalierbare Lakehouse-Architekturen mit Microsoft Fabric (Lakehouse, Dataflows, Pipelines). Kenntnisse in Power BI, SQL und Python sowie IoT-Konzepten und Systemkonnektivität. Erfahren in der Integration von Betriebs- und IoT-Daten in einheitliche Analyseumgebungen und der Umwandlung komplexer Datensätze in verwertbare Erkenntnisse. Starke Kommunikationsfähigkeiten in Deutsch und Englisch.",
+        label_email: "E-Mail:",
+        label_website: "Webseite:",
+        label_city: "Stadt:",
+        label_degree: "Abschluss:",
+        about_city_val: "Bamberg, Deutschland",
+        about_degree_val: "M.Sc. Internationales Informationssystemmanagement",
+        skills_programming: "Programmiersprachen",
+        skills_frameworks: "Frameworks & Werkzeuge",
+        skills_os: "Betriebssysteme",
+        resume_work: "Berufserfahrung",
+        resume_education: "Bildung",
+        resume_certs: "Zertifikate",
+        job1_title: "Industriepraktikant — AKIPAS-Projekt",
+        job1_period: "Mai 2025 – Jan 2026",
+        job1_b1: "Mitarbeit am Forschungsprojekt „AKIPAS – Augmented AI-Module für Produktionsassistenzsysteme in der integrierten Fertigung metallisierter Keramiksubstrate für die Leistungselektronik“.",
+        job1_b2: "Erhebung und Bereinigung von Daten aus primären und sekundären Quellen für Analytics- und KI-Anwendungsfälle.",
+        job1_b3: "Aufbau und Pflege eines DBMS; Migration vorhandener Produktionsdaten in das neue System.",
+        job1_b4: "Erstellung von Dashboards und Datenauswertungen zur Unterstützung der Produktionsoptimierung.",
+        job1_b5: "Operationalisierung von Prozessmodellen im Data-Science-Kontext und Dokumentation von Best Practices.",
+        job1_b6: "Ableitung von Optimierungsempfehlungen mittels statistischer Methoden und Präsentation der Ergebnisse vor Stakeholdern.",
+        job2_title: "Wissenschaftliche Hilfskraft",
+        job2_period: "Mrz 2023 – Heute",
+        job2_b1: "Unterstützung akademischer Forschungsprojekte mit Datenanalyse.",
+        job2_b2: "Entwicklung und Optimierung von Datenbanken zur Sicherstellung präziser Forschungsdatensätze.",
+        job2_b3: "Anwendung statistischer Analysen, Datenvisualisierung und Prozessoptimierungsverfahren.",
+        job2_b4: "Mitwirkung bei der Erstellung akademischer Publikationen und internem Reporting.",
+        job2_b5: "Arbeit mit Programmiertools (Python, R) und IT-Projektmanagementaufgaben.",
+        job3_title: "Werkstudent — Digitalisierung & IT",
+        job3_period: "Mrz 2024 – Mrz 2025",
+        job3_b1: "Teil des Teams Connectivity & Process Control Solutions im Industrial Engineering.",
+        job3_b2: "Beitrag zu Digitalisierungs- und Industrie-4.0-Initiativen durch Integration von IT/OT-Systemen.",
+        job3_b3: "Entwurf und Standardisierung von Dashboards mit Power BI und Python.",
+        job3_b4: "Verbesserung von Datenverwaltungsprozessen und Reporting-Workflows.",
+        job3_b5: "Zusammenarbeit mit funktionsübergreifenden Teams zur Implementierung digitaler Lösungen in der Produktion.",
+        job4_title: "Werkstudent — DigiOps für Digital & Automation",
+        job4_period: "Feb 2023 – Mrz 2024",
+        job4_b1: "Unterstützung der DigiOps-Abteilungen für Digital & Automation (Service Sales & Transformation).",
+        job4_b2: "Erstellung von Dashboards und automatisierten Berichten mit Power BI, Excel (Pivot, VBA) und SAP.",
+        job4_b3: "Durchführung statistischer Analysen, Abweichungsberichte und Sicherstellung der Datenqualität.",
+        job4_b4: "Cloud-Computing und Datenintegration für Produktionstransformationsprojekte eingesetzt.",
+        job4_b5: "Unterstützung agiler Teams in digitalen Projekten und Beitrag zu Optimierungsinitiativen.",
+        job5_title: "Datenqualitätsanalyst",
+        job5_period: "Jan 2017 – Okt 2019",
+        job5_b1: "Erhebung, Validierung und Analyse von Dienstleistungsstatistiken auf nationaler Ebene.",
+        job5_b2: "Entwurf und Pflege von Datenbanken für zuverlässiges statistisches Reporting.",
+        job5_b3: "Qualitätssicherung und Identifikation von Inkonsistenzen in großen Datensätzen.",
+        job5_b4: "Erstellung statistischer Berichte für Regierung und Stakeholder.",
+        job5_b5: "Sicherstellung der Einhaltung internationaler Standards für Datenverwaltung und Reporting.",
+        job6_title: "Praktikant",
+        job6_period: "Jun 2015 – Jul 2016",
+        job6_b1: "Unterstützung des Geschäftsbetriebs und der Verarbeitung von Finanzdaten.",
+        job6_b2: "Arbeit mit der Bankensoftware Temenos T24 für Dateneingabe und Reporting.",
+        job6_b3: "Unterstützung der Filialmitarbeiter bei Kontoverwaltung und Kundendienstprozessen.",
+        job6_b4: "Erste Einblicke in finanzielle IT-Systeme und Reporting-Tools gewonnen.",
+        edu1_title: "M.Sc. Internationales Informationssystemmanagement",
+        edu1_period: "Okt 2023 – Okt 2025",
+        edu1_b1: "Masterstudium mit Schwerpunkt Informationssysteme, Data Science und Business Intelligence.",
+        edu1_b2: "Kompetenzen: Experimentelles Design, Business Intelligence, Python, R, Optimierung, Projektplanung, Cloud Computing, Git.",
+        edu1_b3: "Ausgebaute Kompetenzen in Data Science, Projektmanagement, Datenbanken und Management.",
+        edu2_title: "B.Sc. Informationssysteme",
+        edu2_period: "Okt 2021 – Okt 2023",
+        edu2_b1: "Angewandtes Wissen in Datenbanken, Programmierung, Cloud Computing und Optimierung.",
+        edu2_b2: "Gestärkte Kenntnisse in Englisch, Datenanalyse und Projektmanagement.",
+        edu3_title: "B.Sc. Wirtschaftswissenschaften",
+        edu3_period: "Okt 2009 – Jun 2013",
+        edu3_b1: "Bachelorabschluss in Wirtschaftswissenschaften mit Schwerpunkt Management und Geschäftsprozesse.",
+        edu3_b2: "Grundlagen in Wirtschaftsanalyse, Statistik und Organisationsmanagement erworben.",
+        cert1_info: "Ausgestellt Dez 2025 • Credential ID: 9282D54B6D4C7883 • Kenntnisse: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms",
+        cert2_info: "Ausgestellt Feb 2025 • Credential ID: B5755D0006DA82F2 • Kenntnisse: Power BI, Data Analysis, Data Visualization, DAX, Power Query, Data Modeling, Business Intelligence (BI), Dashboard Design, Reporting, KPIs",
+        cert3_info: "Ausgestellt Aug 2024 • Kenntnisse: Projektmanagement, Datenvisualisierung, Statistische Analyse",
+        cert4_info: "Ausgestellt Feb 2025 • Kenntnisse: Scrum, Agile Testing, Projektplanung, Jira",
+        cert5_info: "Ausgestellt Feb 2025 • Kenntnisse: ITSM, Monitoring, Change Management",
+        cert6_info: "Ausgestellt Feb 2025 • Kenntnisse: Data Engineering, SQL, Warehousing, Governance",
+        cert7_info: "Ausgestellt Feb 2025 • Kenntnisse: Docker-Produkte, Containerisierung",
+        cert8_info: "Kenntnisse: Datenbanken, DBeaver",
+        proj_pollmeier_title: "Pollmeier – Power BI Dashboard",
+        footer_rights: "Alle Rechte vorbehalten."
+      },
+
+      en: {
+        nav_home: "Home",
+        nav_about: "About",
+        nav_skills: "Skills",
+        nav_resume: "Resume",
+        nav_projects: "Projects",
+        nav_contact: "Contact",
+        typed_items: ["Data Analyst", "BI Developer", "Data Engineering"],
+        about_title: "BI & Data Engineer / Analyst",
+        about_text: "Solution-oriented data professional with experience across BI engineering, data engineering, and analytics. Skilled in designing data models, building automated ETL/ELT pipelines, and developing scalable lakehouse architectures using Microsoft Fabric (Lakehouse, Dataflows, Pipelines). Proficient in Power BI, SQL, and Python, with strong knowledge of IoT concepts and system connectivity. Adept at integrating operational and IoT data into unified analytical environments and transforming complex datasets into actionable insights. Strong communication skills in German and English.",
+        label_email: "Email:",
+        label_website: "Website:",
+        label_city: "City:",
+        label_degree: "Degree:",
+        about_city_val: "Bamberg, Germany",
+        about_degree_val: "M.Sc. International Information Systems Management",
+        skills_programming: "Programming Languages",
+        skills_frameworks: "Frameworks & Tools",
+        skills_os: "Operating Systems",
+        resume_work: "Work Experience",
+        resume_education: "Education",
+        resume_certs: "Certifications",
+        job1_title: "Industrial Engineering Intern — AKIPAS Project",
+        job1_period: "May 2025 – Jan 2026",
+        job1_b1: "Working on the research project \"AKIPAS – Augmented AI modules for production assistance systems in integrated manufacturing of metallized ceramic substrates for power electronics.\"",
+        job1_b2: "Acquired and cleaned data from primary and secondary sources for analytics and AI use cases.",
+        job1_b3: "Built and maintained a DBMS; migrated existing production data into the new system.",
+        job1_b4: "Created dashboards and data evaluations to support production optimization.",
+        job1_b5: "Operationalized process models in a data science context and documented best practices.",
+        job1_b6: "Derived optimization recommendations using statistical methods and presented findings to stakeholders.",
+        job2_title: "Research Assistant",
+        job2_period: "Mar 2023 – Present",
+        job2_b1: "Supported academic research projects with data analysis.",
+        job2_b2: "Developed and optimized databases to ensure accurate research datasets.",
+        job2_b3: "Applied statistical analysis, data visualization, and process optimization techniques.",
+        job2_b4: "Assisted in preparing academic publications and internal reporting.",
+        job2_b5: "Worked with programming tools (Python, R) and IT project management tasks.",
+        job3_title: "Working Student — Digitalization & IT",
+        job3_period: "Mar 2024 – Mar 2025",
+        job3_b1: "Part of the Connectivity & Process Control Solutions team in Industrial Engineering.",
+        job3_b2: "Contributed to digitalization and Industry 4.0 initiatives by integrating IT/OT systems.",
+        job3_b3: "Designed and standardized dashboards using Power BI and Python.",
+        job3_b4: "Improved data management processes and reporting workflows.",
+        job3_b5: "Collaborated with cross-functional teams to implement digital solutions in production.",
+        job4_title: "Working Student — DigiOps for Digital & Automation",
+        job4_period: "Feb 2023 – Mar 2024",
+        job4_b1: "Supported the DigiOps for Digital & Automation departments (Service Sales & Transformation).",
+        job4_b2: "Created dashboards and automated reports using Power BI, Excel (Pivot, VBA), and SAP.",
+        job4_b3: "Performed statistical analyses, variance reports, and ensured data accuracy and quality.",
+        job4_b4: "Applied cloud computing and data integration for production transformation projects.",
+        job4_b5: "Supported agile teams in digital projects, contributing to optimization initiatives.",
+        job5_title: "Data Quality Analyst",
+        job5_period: "Jan 2017 – Oct 2019",
+        job5_b1: "Collected, validated, and analyzed service statistics data at a national level.",
+        job5_b2: "Designed and maintained databases for reliable statistical reporting.",
+        job5_b3: "Conducted quality assurance and identified inconsistencies in large datasets.",
+        job5_b4: "Prepared statistical reports for government and stakeholders.",
+        job5_b5: "Ensured compliance with international standards of data management and reporting.",
+        job6_title: "Intern",
+        job6_period: "Jun 2015 – Jul 2016",
+        job6_b1: "Assisted in business operations and financial data handling.",
+        job6_b2: "Worked with Temenos T24 banking software for data entry and reporting.",
+        job6_b3: "Supported branch staff in account management and customer service processes.",
+        job6_b4: "Gained initial exposure to financial IT systems and reporting tools.",
+        edu1_title: "M.Sc. International Information Systems Management",
+        edu1_period: "Oct 2023 – Oct 2025",
+        edu1_b1: "Master's degree focused on Information Systems, Data Science, and Business Intelligence.",
+        edu1_b2: "Skills: Experimental Design, Business Intelligence, Python, R, Optimization, Project Planning, Cloud Computing, Git.",
+        edu1_b3: "Developed competencies in Data Science, Project Management, Databases, and Management.",
+        edu2_title: "B.Sc. Information Systems",
+        edu2_period: "Oct 2021 – Oct 2023",
+        edu2_b1: "Applied knowledge in Databases, Programming, Cloud Computing, and Optimization.",
+        edu2_b2: "Strengthened skills in English, Data Analysis, and Project Management.",
+        edu3_title: "B.Sc. Economics",
+        edu3_period: "Oct 2009 – Jun 2013",
+        edu3_b1: "Bachelor's degree in Economics with a focus on Management and Business Processes.",
+        edu3_b2: "Developed foundation in economic analysis, statistics, and organizational management.",
+        cert1_info: "Issued Dec 2025 • Credential ID: 9282D54B6D4C7883 • Skills: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms",
+        cert2_info: "Issued Feb 2025 • Credential ID: B5755D0006DA82F2 • Skills: Power BI, Data Analysis, Data Visualization, DAX, Power Query, Data Modeling, Business Intelligence (BI), Dashboard Design, Reporting, KPIs",
+        cert3_info: "Issued Aug 2024 • Skills: Project Management, Data Visualization, Statistical Analysis",
+        cert4_info: "Issued Feb 2025 • Skills: Scrum, Agile Testing, Project Planning, Jira",
+        cert5_info: "Issued Feb 2025 • Skills: ITSM, Monitoring, Change Management",
+        cert6_info: "Issued Feb 2025 • Skills: Data Engineering, SQL, Warehousing, Governance",
+        cert7_info: "Issued Feb 2025 • Skills: Docker Products, Containerization",
+        cert8_info: "Skills: Databases, DBeaver",
+        proj_pollmeier_title: "Pollmeier – Power BI Dashboard",
+        footer_rights: "All Rights Reserved."
+      },
+
+      az: {
+        nav_home: "Əsas",
+        nav_about: "Haqqımda",
+        nav_skills: "Bacarıqlar",
+        nav_resume: "Tərcümeyi-hal",
+        nav_projects: "Layihələr",
+        nav_contact: "Əlaqə",
+        typed_items: ["Məlumat Analitiki", "BI Tərtibatçısı", "Data Engineering"],
+        about_title: "BI & Data Mühəndisi / Analitiki",
+        about_text: "Həll yönümlü data mütəxəssisi — BI mühəndisliyi, data engineering və analitika sahələrində təcrübəsi var. Məlumat modelləşdirmə, avtomatlaşdırılmış ETL/ELT pipeline-ları və Microsoft Fabric ilə miqyaslanan lakehouse arxitekturaları qurmaqda ixtisaslaşmışdır. Power BI, SQL, Python və IoT anlayışları üzrə güclü bilik. Əməliyyat və IoT məlumatlarını vahid analitik mühitə inteqrasiya etməkdə və mürəkkəb məlumat dəstlərini əməli nəticələrə çevirmədə təcrübəli. Alman və İngilis dillərində güclü ünsiyyət bacarıqları.",
+        label_email: "E-poçt:",
+        label_website: "Vebsayt:",
+        label_city: "Şəhər:",
+        label_degree: "Dərəcə:",
+        about_city_val: "Bamberg, Almaniya",
+        about_degree_val: "M.Sc. Beynəlxalq İnformasiya Sistemləri İdarəetməsi",
+        skills_programming: "Proqramlaşdırma dilləri",
+        skills_frameworks: "Çərçivələr & Alətlər",
+        skills_os: "Əməliyyat sistemləri",
+        resume_work: "İş təcrübəsi",
+        resume_education: "Təhsil",
+        resume_certs: "Sertifikatlar",
+        job1_title: "Sənaye Mühəndisliyi Praktikantı — AKIPAS Layihəsi",
+        job1_period: "May 2025 – Yan 2026",
+        job1_b1: "\"AKIPAS – Güc elektronikası üçün metal örtüklü keramik substratların inteqrasiya olunmuş istehsalında istehsal yardım sistemləri üçün Artırılmış AI modulları\" tədqiqat layihəsində iştirak.",
+        job1_b2: "Analytics və AI istifadə halları üçün birincil və ikincil mənbələrdən məlumatların toplanması və təmizlənməsi.",
+        job1_b3: "DBMS-in qurulması və saxlanılması; mövcud istehsal məlumatlarının yeni sistemə köçürülməsi.",
+        job1_b4: "İstehsal optimizasiyasını dəstəkləmək üçün tabloların və məlumat qiymətləndirmələrinin yaradılması.",
+        job1_b5: "Data science kontekstində proses modellərinin operasionallaşdırılması və ən yaxşı təcrübələrin sənədləşdirilməsi.",
+        job1_b6: "Statistik metodlardan istifadə edərək optimallaşdırma tövsiyələrinin çıxarılması və nəticələrin maraqlı tərəflərə təqdim edilməsi.",
+        job2_title: "Tədqiqat Köməkçisi",
+        job2_period: "Mar 2023 – İndiyə qədər",
+        job2_b1: "Məlumat təhlili ilə akademik tədqiqat layihələrinə dəstək.",
+        job2_b2: "Dəqiq tədqiqat məlumat dəstlərini təmin etmək üçün verilənlər bazalarının hazırlanması və optimallaşdırılması.",
+        job2_b3: "Statistik analiz, məlumat vizuallaşdırması və proses optimizasiyası üsullarının tətbiqi.",
+        job2_b4: "Akademik nəşrlərin hazırlanmasında və daxili hesabatda iştirak.",
+        job2_b5: "Proqramlaşdırma alətləri (Python, R) və İT layihə idarəetməsi tapşırıqları ilə iş.",
+        job3_title: "İşçi Tələbə — Rəqəmselləşmə & İT",
+        job3_period: "Mar 2024 – Mar 2025",
+        job3_b1: "Sənaye Mühəndisliyindəki Əlaqəlilik & Proses Nəzarəti Həlləri komandasının üzvü.",
+        job3_b2: "İT/OT sistemlərinin inteqrasiyası ilə rəqəmselləşmə və Sənaye 4.0 təşəbbüslərinə töhfə.",
+        job3_b3: "Power BI və Python istifadə edərək tabloların layihələndirilməsi və standartlaşdırılması.",
+        job3_b4: "Məlumat idarəetmə proseslərinin və hesabatlıq iş axınlarının təkmilləşdirilməsi.",
+        job3_b5: "İstehsalda rəqəmsal həllərin tətbiqi üçün çarpaz funksiyalı komandalarla əməkdaşlıq.",
+        job4_title: "İşçi Tələbə — Rəqəmsal & Avtomatlaşdırma üçün DigiOps",
+        job4_period: "Fev 2023 – Mar 2024",
+        job4_b1: "Rəqəmsal & Avtomatlaşdırma üçün DigiOps şöbələrinə dəstək (Xidmət Satışı & Transformasiya).",
+        job4_b2: "Power BI, Excel (Pivot, VBA) və SAP istifadə edərək tabloların və avtomatlaşdırılmış hesabatların yaradılması.",
+        job4_b3: "Statistik analizlərin, dispersiya hesabatlarının aparılması və məlumat dəqiqliyi və keyfiyyətinin təmin edilməsi.",
+        job4_b4: "İstehsal transformasiya layihələri üçün bulud hesablama və məlumat inteqrasiyasının tətbiqi.",
+        job4_b5: "Rəqəmsal layihələrdə çevik komandaların dəstəklənməsi, optimallaşdırma təşəbbüslərinə töhfə.",
+        job5_title: "Məlumat Keyfiyyəti Analitiki",
+        job5_period: "Yan 2017 – Okt 2019",
+        job5_b1: "Milli səviyyədə xidmət statistikası məlumatlarının toplanması, yoxlanılması və təhlili.",
+        job5_b2: "Etibarlı statistik hesabatlıq üçün verilənlər bazalarının layihələndirilməsi və saxlanılması.",
+        job5_b3: "Böyük məlumat dəstlərindəki uyğunsuzluqların keyfiyyət yoxlaması və müəyyən edilməsi.",
+        job5_b4: "Hökumət və maraqlı tərəflər üçün statistik hesabatların hazırlanması.",
+        job5_b5: "Məlumat idarəetməsi və hesabatlığının beynəlxalq standartlarına uyğunluğun təmin edilməsi.",
+        job6_title: "Praktikant",
+        job6_period: "İyn 2015 – İyl 2016",
+        job6_b1: "İşgüzar əməliyyatlarda və maliyyə məlumatlarının işlənməsində yardım.",
+        job6_b2: "Məlumat daxiletmə və hesabatlıq üçün Temenos T24 bank proqramı ilə iş.",
+        job6_b3: "Filial işçilərinə hesab idarəetməsi və müştəri xidməti proseslərində dəstək.",
+        job6_b4: "Maliyyə İT sistemləri və hesabatlıq alətləri ilə ilkin tanışlıq əldə edildi.",
+        edu1_title: "M.Sc. Beynəlxalq İnformasiya Sistemləri İdarəetməsi",
+        edu1_period: "Okt 2023 – Okt 2025",
+        edu1_b1: "İnformasiya Sistemləri, Data Science və Business Intelligence-ə fokuslanmış magistr dərəcəsi.",
+        edu1_b2: "Bacarıqlar: Eksperimental dizayn, Business Intelligence, Python, R, Optimizasiya, Layihə planlaması, Bulud hesablama, Git.",
+        edu1_b3: "Data Science, Layihə İdarəetməsi, Verilənlər Bazaları və İdarəetmə üzrə səriştə inkişaf etdirildi.",
+        edu2_title: "B.Sc. İnformasiya Sistemləri",
+        edu2_period: "Okt 2021 – Okt 2023",
+        edu2_b1: "Verilənlər Bazaları, Proqramlaşdırma, Bulud Hesablama və Optimizasiyada tətbiqi bilik.",
+        edu2_b2: "İngilis dili, Məlumat Təhlili və Layihə İdarəetməsi üzrə gücləndirilmiş bacarıqlar.",
+        edu3_title: "B.Sc. İqtisadiyyat",
+        edu3_period: "Okt 2009 – İyn 2013",
+        edu3_b1: "İdarəetmə və Biznes Proseslərinə fokuslanmış İqtisadiyyat üzrə bakalavr dərəcəsi.",
+        edu3_b2: "İqtisadi analiz, statistika və təşkilati idarəetmə üzrə əsas bilik əldə edildi.",
+        cert1_info: "Verilmə tarixi: Dek 2025 • Credential ID: 9282D54B6D4C7883 • Bacarıqlar: Microsoft Fabric, Data Engineering, Data Pipelines, ETL, Data Integration, Lakehouse, Data Warehousing, SQL, Big Data, Cloud Data Platforms",
+        cert2_info: "Verilmə tarixi: Fev 2025 • Credential ID: B5755D0006DA82F2 • Bacarıqlar: Power BI, Data Analysis, Data Visualization, DAX, Power Query, Data Modeling, Business Intelligence (BI), Dashboard Design, Reporting, KPIs",
+        cert3_info: "Verilmə tarixi: Avq 2024 • Bacarıqlar: Layihə İdarəetməsi, Məlumat Vizuallaşdırması, Statistik Analiz",
+        cert4_info: "Verilmə tarixi: Fev 2025 • Bacarıqlar: Scrum, Çevik Sınaq, Layihə Planlaması, Jira",
+        cert5_info: "Verilmə tarixi: Fev 2025 • Bacarıqlar: ITSM, Monitorinq, Dəyişiklik İdarəetməsi",
+        cert6_info: "Verilmə tarixi: Fev 2025 • Bacarıqlar: Data Engineering, SQL, Warehousing, Governance",
+        cert7_info: "Verilmə tarixi: Fev 2025 • Bacarıqlar: Docker Məhsulları, Konteynerləşdirmə",
+        cert8_info: "Bacarıqlar: Verilənlər Bazaları, DBeaver",
+        proj_pollmeier_title: "Pollmeier – Power BI İnformasiya Paneli",
+        footer_rights: "Bütün hüquqlar qorunur."
+      }
+    };
+
+    let currentLang = localStorage.getItem('portfolio_lang') || 'de';
+    let typedInstance = null;
+
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('portfolio_lang', lang);
+      document.documentElement.lang = lang;
+
+      // Update button states
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+
+      // Translate all elements
+      const t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          el.textContent = t[key];
+        }
+      });
+
+      // Reinitialize Typed.js
+      const typedEl = document.getElementById('typed-el');
+      if (typedEl && window.Typed) {
+        if (typedInstance) {
+          typedInstance.destroy();
+        }
+        typedEl.textContent = '';
+        typedInstance = new Typed('#typed-el', {
+          strings: t.typed_items,
+          typeSpeed: 60,
+          backSpeed: 40,
+          backDelay: 1200,
+          loop: true
+        });
+      }
+    }
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      // Wait a tick for main.js to finish
+      setTimeout(function () {
+        setLang(currentLang);
+      }, 100);
+    });
+  </script>
+
+</body>
+
+</html>
