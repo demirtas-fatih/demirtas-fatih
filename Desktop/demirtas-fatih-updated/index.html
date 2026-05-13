@@ -1,806 +1,634 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="de">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Av. Elif Eren – Hukuk Bürosu</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --cream:#FAF8F4;--dark:#1A1714;--gold:#B8935A;--gold-l:#D4AF7A;
-  --warm:#F0EBE3;--muted:#8A7F74;--white:#FFFFFF;
-  --serif:'Cormorant Garamond',Georgia,serif;
-  --sans:'DM Sans',sans-serif;
-}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--cream);color:var(--dark);overflow-x:hidden;font-size:15px}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-/* ── TOPBAR ── */
-.topbar{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(250,248,244,0.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(184,147,90,0.18);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;height:62px}
-.logo{font-family:var(--serif);font-size:1.4rem;font-weight:300;color:var(--dark);letter-spacing:.04em;cursor:pointer}
-.logo b{color:var(--gold);font-weight:400}
-.topnav{display:flex;gap:2rem;list-style:none;align-items:center}
-.topnav a{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .25s;cursor:pointer}
-.topnav a:hover,.topnav a.cur{color:var(--gold)}
-.top-right{display:flex;gap:.6rem;align-items:center}
-.lang-btn{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem .85rem;border:1px solid rgba(184,147,90,.35);background:transparent;color:var(--muted);cursor:pointer;border-radius:2px;transition:all .25s;font-family:var(--sans)}
-.lang-btn:hover,.lang-btn.on{background:var(--gold);color:#fff;border-color:var(--gold)}
-.admin-btn{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.35rem 1rem;border:none;background:var(--dark);color:var(--cream);cursor:pointer;border-radius:2px;transition:background .25s;font-family:var(--sans)}
-.admin-btn:hover{background:var(--gold)}
+  <title>Fatih Demirtas — Portfolio</title>
+  <meta name="description" content="Persönliches Portfolio von Fatih Demirtas: Data Analyst & BI Specialist." />
+  <meta name="keywords" content="Portfolio, Data Analyst, Power BI, Python, SQL, Bamberg" />
 
-/* ── PAGES ── */
-.pg{display:none;animation:fadeIn .35s ease}
-.pg.on{display:block}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  <meta property="og:title" content="Fatih Demirtas — Portfolio" />
+  <meta property="og:description" content="Data Analyst & BI Specialist – Projekte, Kenntnisse, Lebenslauf & Kontakt." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://demirtas-fatih.github.io/" />
+  <meta property="og:image" content="assets/img/og-image.png" />
 
-/* ── HERO ── */
-.hero{min-height:calc(100vh - 62px);display:flex;align-items:center;padding:3rem 2.5rem;position:relative;overflow:hidden}
-.hero-bg{position:absolute;right:0;top:0;bottom:0;width:48%;background:var(--warm);clip-path:polygon(14% 0,100% 0,100% 100%,0 100%)}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
-.hero-badge{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem}
-.hero-badge::before{content:'';width:2rem;height:1px;background:var(--gold)}
-h1.ht{font-family:var(--serif);font-size:3.8rem;font-weight:300;line-height:1.15;margin-bottom:1.3rem}
-h1.ht em{font-style:italic;color:var(--gold)}
-.hero-p{font-size:.92rem;line-height:1.9;color:var(--muted);margin-bottom:2.2rem;max-width:400px}
-.hbtns{display:flex;gap:.9rem;flex-wrap:wrap}
-.bp{background:var(--dark);color:var(--cream);border:none;padding:.8rem 1.8rem;font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .25s}
-.bp:hover{background:var(--gold)}
-.bo{background:transparent;color:var(--dark);border:1px solid rgba(26,23,20,.25);padding:.8rem 1.8rem;font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .25s}
-.bo:hover{border-color:var(--gold);color:var(--gold)}
-.lcard{background:#fff;border-radius:6px;padding:2.2rem;box-shadow:0 20px 60px rgba(0,0,0,.08);max-width:320px;width:100%}
-.lavatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--gold-l),var(--gold));display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:2rem;font-weight:300;color:#fff;margin:0 auto 1.3rem}
-.lcard h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;text-align:center;margin-bottom:.3rem}
-.lcard .sub{font-size:.72rem;color:var(--gold);text-align:center;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.3rem}
-.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.5rem;border-top:1px solid var(--warm);padding-top:1.3rem}
-.sn{font-family:var(--serif);font-size:1.7rem;font-weight:300;color:var(--gold);display:block;text-align:center}
-.sl{font-size:.65rem;color:var(--muted);letter-spacing:.08em;text-transform:uppercase;text-align:center}
+  <link rel="icon" href="assets/img/favicon-32x32.png" type="image/png">
 
-/* ── SECTIONS ── */
-.sec{padding:5.5rem 2.5rem}
-.sec-in{max-width:1100px;margin:0 auto}
-.stag{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.7rem}
-.stag::after{content:'';flex:0 0 2.5rem;height:1px;background:var(--gold)}
-h2.sh{font-family:var(--serif);font-size:2.7rem;font-weight:300;margin-bottom:2rem;line-height:1.2}
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@400;600;700;800&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* ── HAKKINDA ── */
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.about-text p{font-size:.9rem;line-height:1.95;color:#666;margin-bottom:1.1rem}
-.exp-list{list-style:none}
-.exp-list li{padding:.8rem 0;border-bottom:1px solid var(--warm);font-size:.88rem;display:flex;align-items:center;gap:.8rem}
-.exp-list li::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--gold);flex-shrink:0}
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
 
-/* ── MAKALELER ── */
-.art-controls{display:flex;gap:.6rem;margin-bottom:2rem;flex-wrap:wrap}
-.filt{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;padding:.45rem 1.1rem;border:1px solid rgba(184,147,90,.3);background:transparent;color:var(--muted);cursor:pointer;border-radius:2px;transition:all .25s;font-family:var(--sans)}
-.filt:hover,.filt.on{background:var(--gold);color:#fff;border-color:var(--gold)}
-.art-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.3rem}
-.ac{background:#fff;border-radius:4px;overflow:hidden;cursor:pointer;transition:transform .3s,box-shadow .3s;border:1px solid rgba(0,0,0,.05)}
-.ac:hover{transform:translateY(-4px);box-shadow:0 12px 36px rgba(0,0,0,.1)}
-.ac-img{height:140px;display:flex;align-items:center;justify-content:center;font-size:2.4rem}
-.ac-body{padding:1.3rem}
-.ac-cat{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem}
-.ac h4{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:.7rem;line-height:1.35}
-.ac p{font-size:.8rem;line-height:1.75;color:var(--muted)}
-.ac-date{font-size:.7rem;color:var(--muted);margin-top:.9rem;padding-top:.9rem;border-top:1px solid var(--warm)}
+  <link rel="stylesheet" href="assets/css/style.css">
 
-/* ── ARTICLE DETAIL ── */
-.art-detail{max-width:720px;margin:0 auto}
-.art-detail-back{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);cursor:pointer;margin-bottom:2rem;display:inline-flex;align-items:center;gap:.5rem}
-.art-detail-back:hover{opacity:.75}
-.art-detail-cat{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem}
-.art-detail h2{font-family:var(--serif);font-size:2.6rem;font-weight:300;line-height:1.2;margin-bottom:1rem}
-.art-detail-meta{font-size:.77rem;color:var(--muted);margin-bottom:2.2rem;padding-bottom:1.5rem;border-bottom:1px solid var(--warm)}
-.art-detail-body p{font-size:.92rem;line-height:2;color:#555;margin-bottom:1.3rem}
-.art-detail-body h3{font-family:var(--serif);font-size:1.6rem;font-weight:400;margin:2.2rem 0 .9rem;color:var(--dark)}
-
-/* ── RANDEVU ── */
-.appt-sec{background:var(--dark)}
-.appt-sec .stag{color:var(--gold-l)}
-.appt-sec .stag::after{background:var(--gold-l)}
-.appt-sec .sh{color:var(--cream)}
-.appt-sec .sub{color:rgba(250,248,244,.5);font-size:.88rem;margin-bottom:2.8rem}
-.appt-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
-.appt-info-item{display:flex;gap:1rem;margin-bottom:1.7rem;align-items:flex-start}
-.appt-ic{width:38px;height:38px;border:1px solid rgba(184,147,90,.35);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--gold);font-size:.9rem}
-.appt-it h5{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-l);margin-bottom:.3rem}
-.appt-it p{font-size:.84rem;color:rgba(250,248,244,.55);line-height:1.7}
-.appt-form{background:rgba(255,255,255,.04);border:1px solid rgba(184,147,90,.15);border-radius:4px;padding:2.2rem}
-.fg{display:flex;flex-direction:column;gap:.38rem;margin-bottom:1rem}
-.fg label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(250,248,244,.4)}
-.fg input,.fg select,.fg textarea{background:rgba(255,255,255,.06);border:1px solid rgba(184,147,90,.18);color:var(--cream);padding:.68rem .95rem;font-family:var(--sans);font-size:.85rem;border-radius:2px;transition:border-color .25s;outline:none;width:100%}
-.fg input::placeholder{color:rgba(250,248,244,.2)}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
-.fg select option{background:#1A1714;color:var(--cream)}
-.fg textarea{resize:vertical;min-height:90px}
-.fg2{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.sub-btn{width:100%;background:var(--gold);color:#fff;border:none;padding:.9rem;font-family:var(--sans);font-size:.77rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:2px;margin-top:.4rem;transition:background .25s}
-.sub-btn:hover{background:var(--gold-l)}
-.appt-success{display:none;text-align:center;padding:3rem 1rem}
-.appt-success.on{display:block}
-.appt-success h4{font-family:var(--serif);font-size:1.8rem;font-weight:300;color:var(--cream);margin:.9rem 0 .6rem}
-.appt-success p{font-size:.85rem;color:rgba(250,248,244,.5)}
-
-/* ── ADMIN ── */
-.admin-layout{display:grid;grid-template-columns:230px 1fr;min-height:calc(100vh - 62px)}
-.admin-sidebar{background:var(--dark);padding:1.8rem;display:flex;flex-direction:column;gap:.3rem}
-.admin-sidebar h3{font-family:var(--serif);font-size:1.15rem;font-weight:300;color:var(--cream);margin-bottom:1.2rem;padding-bottom:.9rem;border-bottom:1px solid rgba(184,147,90,.2)}
-.aside-btn{width:100%;text-align:left;background:transparent;border:none;padding:.68rem 1rem;font-family:var(--sans);font-size:.77rem;letter-spacing:.08em;color:rgba(250,248,244,.45);cursor:pointer;border-radius:3px;transition:all .25s}
-.aside-btn:hover,.aside-btn.on{background:rgba(184,147,90,.12);color:var(--gold-l)}
-.admin-main{background:var(--cream);padding:2.2rem}
-.admin-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem}
-.admin-hd h2{font-family:var(--serif);font-size:2.1rem;font-weight:300}
-.dash-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-bottom:2.2rem}
-.dash-card{background:#fff;border-radius:6px;border:1px solid rgba(0,0,0,.06);padding:1.3rem}
-.dash-card .dn{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--gold)}
-.dash-card .dl{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:.3rem}
-.appt-table{width:100%;border-collapse:collapse;font-size:.8rem;background:#fff;border-radius:6px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.06)}
-.appt-table th{background:var(--dark);color:var(--cream);padding:.75rem 1rem;text-align:left;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400}
-.appt-table td{padding:.8rem 1rem;border-bottom:1px solid var(--warm);color:#555;vertical-align:top}
-.appt-table tr:last-child td{border-bottom:none}
-.appt-table tr:hover td{background:#fafaf8}
-.badge{font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;padding:.15rem .55rem;border-radius:2px;font-weight:500}
-.badge-new{background:#EEF8F2;color:#1D9E75}
-.badge-done{background:var(--warm);color:var(--muted)}
-.editor-wrap{background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:6px;padding:1.8rem}
-.editor-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.ef{display:flex;flex-direction:column;gap:.38rem;margin-bottom:1rem}
-.ef label{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.ef input,.ef select,.ef textarea{border:1px solid rgba(0,0,0,.1);padding:.65rem .9rem;font-family:var(--sans);font-size:.85rem;border-radius:2px;outline:none;transition:border-color .25s;width:100%;background:#fff}
-.ef input:focus,.ef select:focus,.ef textarea:focus{border-color:var(--gold)}
-.ef textarea{min-height:200px;resize:vertical;line-height:1.75}
-.save-btn{background:var(--gold);color:#fff;border:none;padding:.72rem 1.9rem;font-family:var(--sans);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:background .25s}
-.save-btn:hover{background:var(--gold-l)}
-.del-btn{background:transparent;color:#c0392b;border:1px solid rgba(192,57,43,.3);padding:.4rem .9rem;font-family:var(--sans);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .25s}
-.del-btn:hover{background:#c0392b;color:#fff}
-.art-admin-list{display:flex;flex-direction:column;gap:.7rem;margin-bottom:1.5rem}
-.art-admin-item{background:#fff;border:1px solid rgba(0,0,0,.07);border-radius:4px;padding:1rem 1.3rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.art-admin-item h5{font-family:var(--serif);font-size:1.05rem;font-weight:400;margin-bottom:.2rem}
-.art-admin-item span{font-size:.73rem;color:var(--muted)}
-.art-admin-actions{display:flex;gap:.5rem;flex-shrink:0}
-.edit-btn{background:transparent;color:var(--gold);border:1px solid rgba(184,147,90,.35);padding:.32rem .75rem;font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;cursor:pointer;border-radius:2px;transition:all .25s;font-family:var(--sans)}
-.edit-btn:hover{background:var(--gold);color:#fff}
-
-/* ── FOOTER ── */
-footer{background:#111;padding:2rem 2.5rem;text-align:center}
-footer p{font-size:.78rem;color:#555;letter-spacing:.07em}
-footer a{color:var(--gold);text-decoration:none}
-
-/* ── TOAST ── */
-.toast{position:fixed;bottom:1.8rem;right:1.8rem;background:var(--dark);color:var(--cream);padding:.85rem 1.6rem;border-radius:4px;font-size:.82rem;z-index:999;transform:translateY(100px);opacity:0;transition:all .35s;pointer-events:none;font-family:var(--sans)}
-.toast.show{transform:translateY(0);opacity:1}
-
-/* ── RESPONSIVE ── */
-@media(max-width:900px){
-  .hero-inner,.about-grid,.appt-grid{grid-template-columns:1fr}
-  .hero-bg{display:none}
-  .art-grid{grid-template-columns:1fr 1fr}
-  .dash-grid{grid-template-columns:1fr 1fr}
-  .admin-layout{grid-template-columns:1fr}
-  .admin-sidebar{flex-direction:row;flex-wrap:wrap;gap:.4rem;padding:1rem}
-  .topnav{gap:1rem}
-  h1.ht{font-size:2.8rem}
-}
-@media(max-width:600px){
-  .topbar{padding:0 1.2rem}
-  .topnav{display:none}
-  .art-grid{grid-template-columns:1fr}
-  .dash-grid{grid-template-columns:1fr 1fr}
-  .editor-row,.fg2{grid-template-columns:1fr}
-  h1.ht{font-size:2.2rem}
-  .sec{padding:3.5rem 1.2rem}
-}
-</style>
+  <style>
+    .lang-switcher { position: fixed; bottom: 70px; right: 15px; z-index: 99998; display: flex; flex-direction: column; gap: 6px; }
+    .lang-btn { background: #fff; border: 2px solid #2563eb; color: #2563eb; font-size: 11px; font-weight: 700; letter-spacing: 0.5px; padding: 5px 10px; border-radius: 10px; cursor: pointer; box-shadow: 0 2px 10px rgba(37,99,235,0.15); transition: all 0.25s; width: 40px; text-align: center; }
+    .lang-btn:hover, .lang-btn.active { background: #2563eb; color: #fff; transform: scale(1.05); }
+  </style>
 </head>
+
 <body>
 
-<nav class="topbar">
-  <div class="logo" onclick="go('pg-home')">Av. Elif <b>Eren</b></div>
-  <ul class="topnav">
-    <li><a onclick="go('pg-home')" class="cur" id="nav-home">Ana Sayfa</a></li>
-    <li><a onclick="go('pg-about')" id="nav-about">Hakkımda</a></li>
-    <li><a onclick="go('pg-articles')" id="nav-articles">Makaleler</a></li>
-    <li><a onclick="go('pg-appt')" id="nav-appt">Randevu</a></li>
-  </ul>
-  <div class="top-right">
-    <button class="lang-btn on" id="lb-tr" onclick="setLang('tr')">TR</button>
-    <button class="lang-btn" id="lb-en" onclick="setLang('en')">EN</button>
-    <button class="admin-btn" onclick="go('pg-admin')">⚙ Admin</button>
+  <!-- Language Switcher -->
+  <div class="lang-switcher" role="group" aria-label="Language selector">
+    <button class="lang-btn active" onclick="setLang('de')" id="btn-de">DE</button>
+    <button class="lang-btn" onclick="setLang('en')" id="btn-en">EN</button>
   </div>
-</nav>
 
-<!-- ═══ HOME ═══ -->
-<div class="pg on" id="pg-home" style="padding-top:62px">
-  <div class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="hero-badge" id="h-badge">Hukuk Bürosu</div>
-        <h1 class="ht" id="h-title">Haklarınız için<br><em>güçlü bir</em><br>savunuculuk</h1>
-        <p class="hero-p" id="h-desc">Müvekkillerime kişiselleştirilmiş, çözüm odaklı hizmet sunarak hukuki süreçlerin her adımında yanlarında oluyorum.</p>
-        <div class="hbtns">
-          <button class="bp" onclick="go('pg-appt')" id="h-btn1">Randevu Al</button>
-          <button class="bo" onclick="go('pg-about')" id="h-btn2">Daha Fazlası</button>
-        </div>
-      </div>
-      <div style="display:flex;justify-content:center">
-        <div class="lcard">
-          <div class="lavatar" style="background:none;padding:0;overflow:hidden"><img src="data:image/png;base64,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" style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
-          <h3>Elif Eren</h3>
-          <p class="sub" id="h-role">Avukat · Hukukçu</p>
-          <div class="stats">
-            <div><span class="sn">12+</span><span class="sl" id="s-year">Yıl</span></div>
-            <div><span class="sn">500+</span><span class="sl" id="s-case">Dava</span></div>
-            <div><span class="sn">%95</span><span class="sl" id="s-win">Başarı</span></div>
-          </div>
-        </div>
+  <!-- Mobile nav toggle -->
+  <button type="button" class="mobile-nav-toggle d-xl-none" aria-label="Toggle navigation">
+    <i class="bx bx-menu"></i>
+  </button>
+
+  <!-- Header -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+    <nav class="nav-menu">
+      <ul>
+        <li class="active"><a href="#hero"><i class="bx bx-home"></i><span data-i18n="nav_home">Startseite</span></a></li>
+        <li><a href="#about"><i class="bx bx-user"></i><span data-i18n="nav_about">Über mich</span></a></li>
+        <li><a href="#skills"><i class="bx bx-server"></i><span data-i18n="nav_skills">Kenntnisse</span></a></li>
+        <li><a href="#resume"><i class="bx bx-file-blank"></i><span data-i18n="nav_resume">Lebenslauf</span></a></li>
+        <li><a href="#projects"><i class="bx bx-book-content"></i><span data-i18n="nav_projects">Projekte</span></a></li>
+        <li><a href="#contact"><i class="bx bx-mail-send"></i><span data-i18n="nav_contact">Kontakt</span></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <h1>Fatih Demirtas</h1>
+      <p><span id="typed-el"></span></p>
+      <div class="social-links">
+        <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" aria-label="GitHub"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+        <a href="mailto:fatihdemirtask@gmail.com" aria-label="Email"><i class="bx bx-mail-send"></i></a>
       </div>
     </div>
-  </div>
-  <footer><p>© 2026 Av. Elif Eren · <a href="#">Gizlilik Politikası</a></p></footer>
-</div>
+  </section>
 
-<!-- ═══ HAKKINDA ═══ -->
-<div class="pg" id="pg-about" style="padding-top:62px">
-  <div class="sec" style="background:#fff;min-height:calc(100vh - 62px)">
-    <div class="sec-in">
-      <div class="stag" id="ab-tag">Hakkımda</div>
-      <div class="about-grid">
-        <div class="about-text">
-          <h2 class="sh" id="ab-title">Adalete inancımla<br>hizmetinizde</h2>
-          <p id="ab-p1">İstanbul Üniversitesi Hukuk Fakültesi'nden mezun olduktan sonra 12 yılı aşkın sürede edindiğim deneyimle iş hukuku, aile hukuku ve tüketici hakları alanlarında uzmanlaştım.</p>
-          <p id="ab-p2">Her müvekkili bireysel olarak değerlendiriyor, karmaşık hukuki süreçleri anlaşılır bir dille aktarıyor ve en iyi sonucu elde etmek için kararlılıkla çalışıyorum.</p>
-          <button class="bp" style="margin-top:1.3rem" onclick="go('pg-appt')" id="ab-cta">Ön Görüşme Talep Et</button>
+  <main id="main">
+
+    <!-- About -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_about">Über mich</h2>
         </div>
-        <div>
-          <ul class="exp-list" id="exp-list">
-            <li>İş ve İşçi Hukuku</li>
-            <li>Aile ve Boşanma Hukuku</li>
-            <li>Tüketici Hakları</li>
-            <li>Miras Hukuku</li>
-            <li>Kira ve Tahliye Davaları</li>
-            <li>Sözleşmeler Hukuku</li>
-            <li>İcra ve İflas Hukuku</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!-- ═══ MAKALELER ═══ -->
-<div class="pg" id="pg-articles" style="padding-top:62px">
-  <div class="sec" style="min-height:calc(100vh - 62px)">
-    <div class="sec-in">
-      <div class="stag" id="bl-tag">Makaleler</div>
-      <h2 class="sh" id="bl-title">Hukuki bilgi, herkes için</h2>
-      <div class="art-controls" id="art-filters"></div>
-      <div class="art-grid" id="art-grid"></div>
-    </div>
-  </div>
-</div>
+        <div class="row mt-md-4">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <img src="assets/img/Fatih_bewerbung_Photo.png" class="img-fluid" alt="Fatih Demirtas" loading="lazy" style="width:100%;border-radius:14px;">
+          </div>
 
-<!-- Article Detail -->
-<div class="pg" id="pg-article-detail" style="padding-top:62px">
-  <div class="sec" style="background:#fff;min-height:calc(100vh - 62px)">
-    <div id="art-detail-content" class="art-detail"></div>
-  </div>
-</div>
+          <div class="col-lg-8 pt-2 pt-lg-0 content">
+            <h3 data-i18n="about_title">Junior Data Analyst &amp; BI Specialist</h3>
+            <p class="mt-3" data-i18n="about_text">
+              Motivated Junior Data Analyst with hands-on experience in Power BI, Python, and data automation through working student roles at Siemens and Mercedes-Benz. Skilled in building interactive dashboards, data modeling, and automating data processes. Strong analytical mindset with a passion for transforming data into actionable insights.
+            </p>
 
-<!-- ═══ RANDEVU ═══ -->
-<div class="pg appt-sec" id="pg-appt" style="padding-top:62px">
-  <div class="sec">
-    <div class="sec-in">
-      <div class="stag" id="ap-tag">Randevu</div>
-      <h2 class="sh" id="ap-title">Görüşme ayarlayalım</h2>
-      <p class="sub" id="ap-sub">İlk görüşme ücretsizdir. Size en kısa sürede dönüş yapacağım.</p>
-      <div class="appt-grid">
-        <div>
-          <div class="appt-info-item">
-            <div class="appt-ic">📍</div>
-            <div class="appt-it"><h5 id="ap-addr-l">Adres</h5><p>Bağlarbaşı Mah. Hukuk Cad. No:12<br>Üsküdar, İstanbul</p></div>
-          </div>
-          <div class="appt-info-item">
-            <div class="appt-ic">📞</div>
-            <div class="appt-it"><h5 id="ap-tel-l">Telefon</h5><p>+90 (216) 555 00 11</p></div>
-          </div>
-          <div class="appt-info-item">
-            <div class="appt-ic">✉️</div>
-            <div class="appt-it"><h5 id="ap-mail-l">E-Posta</h5><p>elif@erenlaw.com.tr</p></div>
-          </div>
-          <div class="appt-info-item">
-            <div class="appt-ic">🕐</div>
-            <div class="appt-it"><h5 id="ap-hours-l">Çalışma Saatleri</h5><p id="ap-hours">Pzt–Cum: 09:00–18:00<br>Cumartesi: 10:00–14:00</p></div>
-          </div>
-        </div>
-        <div>
-          <div class="appt-form" id="apptForm">
-            <div class="fg2">
-              <div class="fg"><label id="lbl-name">Ad</label><input id="f-name" placeholder="Adınız"></div>
-              <div class="fg"><label id="lbl-sur">Soyad</label><input id="f-sur" placeholder="Soyadınız"></div>
-            </div>
-            <div class="fg"><label id="lbl-phone">Telefon</label><input id="f-phone" placeholder="+90 5XX XXX XX XX"></div>
-            <div class="fg"><label id="lbl-email">E-Posta</label><input id="f-email" type="email" placeholder="ornek@mail.com"></div>
-            <div class="fg2">
-              <div class="fg"><label id="lbl-date">Tarih</label><input id="f-date" type="date"></div>
-              <div class="fg"><label id="lbl-time">Saat</label>
-                <select id="f-time">
-                  <option value="">Seçiniz</option>
-                  <option>09:00</option><option>10:00</option><option>11:00</option>
-                  <option>13:00</option><option>14:00</option><option>15:00</option>
-                  <option>16:00</option><option>17:00</option>
-                </select>
+            <div class="row mt-4">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bx bx-right-arrow-alt"></i><strong data-i18n="label_email">E-Mail:</strong>&nbsp;<a href="mailto:fatihdemirtask@gmail.com">fatihdemirtask@gmail.com</a></li>
+                  <li><i class="bx bx-right-arrow-alt"></i><strong>LinkedIn:</strong>&nbsp;<a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener">fatih-demirtas47</a></li>
+                  <li><i class="bx bx-right-arrow-alt"></i><strong>GitHub:</strong>&nbsp;<a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener">demirtas-fatih</a></li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="bx bx-right-arrow-alt"></i><strong data-i18n="label_city">Stadt:</strong>&nbsp;<span data-i18n="about_city_val">Bamberg, Deutschland</span></li>
+                  <li><i class="bx bx-right-arrow-alt"></i><strong data-i18n="label_degree">Abschluss:</strong>&nbsp;<span data-i18n="about_degree_val">M.Sc. Data Science</span></li>
+                  <li><i class="bx bx-right-arrow-alt"></i><strong data-i18n="label_phone">Tel:</strong>&nbsp;<span>+49 178 3316422</span></li>
+                </ul>
               </div>
             </div>
-            <div class="fg"><label id="lbl-topic">Konu</label>
-              <select id="f-topic">
-                <option value="">Seçiniz</option>
-                <option>İş & İşçi Hukuku</option><option>Aile & Boşanma Hukuku</option>
-                <option>Tüketici Hakları</option><option>Miras Hukuku</option>
-                <option>Kira & Tahliye</option><option>Sözleşme Hukuku</option><option>Diğer</option>
-              </select>
-            </div>
-            <div class="fg"><label id="lbl-note">Açıklama</label><textarea id="f-note" placeholder="Davanız hakkında kısa bir bilgi..."></textarea></div>
-            <button class="sub-btn" id="submit-btn" onclick="submitAppt()">Randevu Talebi Gönder</button>
-          </div>
-          <div class="appt-success" id="apptSuccess">
-            <div style="font-size:2.8rem">✅</div>
-            <h4 id="succ-h">Talebiniz Alındı</h4>
-            <p id="succ-p">En geç 24 saat içinde sizi arayacağız.</p>
+
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </section>
 
-<!-- ═══ ADMIN ═══ -->
-<div class="pg" id="pg-admin" style="padding-top:62px">
-  <div class="admin-layout">
-    <div class="admin-sidebar">
-      <h3>Admin Paneli</h3>
-      <button class="aside-btn on" id="as-dash" onclick="adminTab('dash')">📊 Dashboard</button>
-      <button class="aside-btn" id="as-arts" onclick="adminTab('arts')">📝 Makaleler</button>
-      <button class="aside-btn" id="as-new" onclick="adminTab('new')">➕ Yeni Makale</button>
-      <button class="aside-btn" id="as-appts" onclick="adminTab('appts')">📅 Randevular</button>
-      <div style="flex:1"></div>
-      <button class="aside-btn" onclick="go('pg-home')" style="margin-top:1rem">← Siteye Dön</button>
-    </div>
-    <div class="admin-main">
-      <!-- DASHBOARD -->
-      <div id="atab-dash">
-        <div class="admin-hd"><h2>Dashboard</h2></div>
-        <div class="dash-grid" id="dash-grid"></div>
-        <h3 style="font-family:var(--serif);font-weight:400;margin-bottom:1rem;font-size:1.4rem">Son Randevular</h3>
-        <div id="admin-appts-mini"></div>
+    <!-- Skills -->
+    <section id="skills" class="skills">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_skills">Kenntnisse</h2>
+        </div>
+
+        <h4 class="mt-2" data-i18n="skills_core">Core Skills</h4>
+        <div class="skills-grid">
+          <div><img src="assets/img/Power-BI.png" alt="Power BI"><p>Power BI</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+          <div><img src="assets/img/sql_database.png" alt="SQL"><p>SQL</p></div>
+          <div><img src="assets/img/Excel.png" alt="Excel"><p>Excel</p></div>
+          <div><img src="https://cdn.simpleicons.org/microsoftazure/0078D4" alt="Azure"><p>Azure</p></div>
+          <div><img src="assets/img/Qlik_Logo.svg" alt="Qlik"><p>Qlik</p></div>
+          <div><img src="assets/img/Tableau.png" alt="Tableau"><p>Tableau</p></div>
+          <div><img src="https://cdn.simpleicons.org/knime/FFBA00" alt="KNIME"><p>KNIME</p></div>
+        </div>
+
+        <h4 class="mt-4" data-i18n="skills_frameworks">Frameworks &amp; Tools</h4>
+        <div class="skills-grid">
+          <div><img src="assets/img/fabric.png" alt="Microsoft Fabric"><p>MS Fabric</p></div>
+          <div><img src="assets/img/data_factory.png" alt="Data Factory"><p>Data Factory</p></div>
+          <div><img src="assets/img/dataflow.png" alt="Dataflow"><p>Dataflow</p></div>
+          <div><img src="assets/img/one_lake.png" alt="One Lake"><p>OneLake</p></div>
+          <div><img src="assets/img/data_warehouse.png" alt="Data Warehouse"><p>Data Warehouse</p></div>
+          <div><img src="https://cdn.simpleicons.org/microsoftpowerautomate/0066FF" alt="Power Automate"><p>Power Automate</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"><p>Git</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter"><p>Jupyter</p></div>
+          <div><img src="assets/img/docker-logo-blue.png" alt="Docker"><p>Docker</p></div>
+          <div><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"><p>MySQL</p></div>
+          <div><img src="assets/img/SSMS_21_icon.png" alt="SSMS"><p>SSMS</p></div>
+          <div><img src="assets/img/Visual_Studio_Code.png" alt="VS Code"><p>VS Code</p></div>
+        </div>
+
+        <h4 class="mt-4" data-i18n="skills_lang">Sprachen</h4>
+        <div class="skills-grid">
+          <div><img src="https://flagcdn.com/w40/tr.png" alt="Türkçe" style="border-radius:4px;width:42px;height:28px;object-fit:cover;"><p>Türkisch</p></div>
+          <div><img src="https://flagcdn.com/w40/de.png" alt="Deutsch" style="border-radius:4px;width:42px;height:28px;object-fit:cover;"><p>Deutsch</p></div>
+          <div><img src="https://flagcdn.com/w40/gb.png" alt="English" style="border-radius:4px;width:42px;height:28px;object-fit:cover;"><p>Englisch</p></div>
+        </div>
+
       </div>
-      <!-- MAKALELER LİSTESİ -->
-      <div id="atab-arts" style="display:none">
-        <div class="admin-hd"><h2>Makaleler</h2><button class="save-btn" onclick="adminTab('new')">+ Yeni Makale</button></div>
-        <div class="art-admin-list" id="art-admin-list"></div>
-      </div>
-      <!-- MAKALE EDITOR -->
-      <div id="atab-new" style="display:none">
-        <div class="admin-hd"><h2 id="editor-title">Yeni Makale</h2></div>
-        <div class="editor-wrap">
-          <input type="hidden" id="edit-id">
-          <div class="editor-row">
-            <div class="ef"><label>Başlık (TR)</label><input id="e-title-tr" placeholder="Türkçe başlık"></div>
-            <div class="ef"><label>Title (EN)</label><input id="e-title-en" placeholder="English title"></div>
-          </div>
-          <div class="editor-row">
-            <div class="ef"><label>Kategori (TR)</label>
-              <select id="e-cat-tr"><option>İş Hukuku</option><option>Aile Hukuku</option><option>Tüketici Hakları</option><option>Miras Hukuku</option><option>Kira Hukuku</option><option>Sözleşme Hukuku</option></select>
+    </section>
+
+    <!-- Resume -->
+    <section id="resume" class="resume">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_resume">Lebenslauf</h2>
+        </div>
+
+        <div class="row">
+          <!-- Work Experience -->
+          <div class="col-lg-6">
+            <h3 class="resume-title" data-i18n="resume_work">Berufserfahrung</h3>
+
+            <div class="resume-item">
+              <h4 data-i18n="job1_title">Working Student – Business Partner</h4>
+              <h5 data-i18n="job1_period">01/2024 – Heute</h5>
+              <p class="company">Siemens Healthineers AG, Germany</p>
+              <ul>
+                <li data-i18n="job1_b1">Entwicklung interaktiver Power BI Dashboards mit Deneb (Vega-Lite).</li>
+                <li data-i18n="job1_b2">Aufbau relationaler Datenmodelle für Business Insights.</li>
+                <li data-i18n="job1_b3">Automatisierung finanzieller Prozesse mit Excel und Power Query; Reduzierung manueller Arbeit um ca. 30%.</li>
+                <li data-i18n="job1_b4">Integration von Daten aus mehreren Quellen (Qlik, interne Systeme).</li>
+                <li data-i18n="job1_b5">Erstellung API-basierter Abfragen in Azure DevOps.</li>
+                <li data-i18n="job1_b6">Automatisierung von Workflows mit Python.</li>
+              </ul>
             </div>
-            <div class="ef"><label>Category (EN)</label>
-              <select id="e-cat-en"><option>Labour Law</option><option>Family Law</option><option>Consumer Rights</option><option>Inheritance Law</option><option>Tenancy Law</option><option>Contract Law</option></select>
+
+            <div class="resume-item">
+              <h4 data-i18n="job2_title">Working Student – Supplier Quality Management</h4>
+              <h5 data-i18n="job2_period">03/2023 – 01/2024</h5>
+              <p class="company">Mercedes-Benz Group, Germany</p>
+              <ul>
+                <li data-i18n="job2_b1">Automatisierung von Geschäftsprozessen mit Power Automate.</li>
+                <li data-i18n="job2_b2">Erstellung Excel-basierter Abfragen und automatisierter Workflows.</li>
+                <li data-i18n="job2_b3">Entwicklung von Power BI Reports und Präsentation von Erkenntnissen für das Management.</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="job3_title">Working Student – Regional Unit</h4>
+              <h5 data-i18n="job3_period">01/2023 – 07/2023</h5>
+              <p class="company">Siemens AG, Germany</p>
+              <ul>
+                <li data-i18n="job3_b1">Unterstützung bei der Digitalisierung von Geschäftsprozessen.</li>
+                <li data-i18n="job3_b2">Implementierung von Automatisierungslösungen mit Power Automate.</li>
+                <li data-i18n="job3_b3">Verwaltung von SharePoint- und Dokumentationssystemen.</li>
+              </ul>
             </div>
           </div>
-          <div class="editor-row">
-            <div class="ef"><label>Özet (TR)</label><input id="e-sum-tr" placeholder="Kısa özet..."></div>
-            <div class="ef"><label>Summary (EN)</label><input id="e-sum-en" placeholder="Short summary..."></div>
-          </div>
-          <div class="ef"><label>İçerik (TR) — paragrafları boş satırla ayırın</label><textarea id="e-body-tr" placeholder="Türkçe makale içeriği..."></textarea></div>
-          <div class="ef"><label>Content (EN)</label><textarea id="e-body-en" placeholder="English article content..."></textarea></div>
-          <div class="editor-row">
-            <div class="ef"><label>Emoji / İkon</label><input id="e-icon" placeholder="⚖️" value="⚖️" style="font-size:1.4rem;text-align:center"></div>
-            <div class="ef"><label>Arka plan rengi</label>
-              <select id="e-bg"><option value="#EEF2F8">Mavi</option><option value="#F8F0EE">Pembe</option><option value="#EEF8F2">Yeşil</option><option value="#FFF8EE">Sarı</option><option value="#F3EEF8">Mor</option></select>
+
+          <!-- Education & Certifications -->
+          <div class="col-lg-6">
+            <h3 class="resume-title" data-i18n="resume_education">Bildung</h3>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu1_title">M.Sc. Data Science</h4>
+              <h5 data-i18n="edu1_period">2025 – Heute</h5>
+              <p class="company">Hochschule Coburg, Germany</p>
             </div>
-          </div>
-          <div style="display:flex;gap:.9rem;margin-top:.8rem;flex-wrap:wrap">
-            <button class="save-btn" onclick="saveArticle()">Kaydet</button>
-            <button class="del-btn" id="del-art-btn" onclick="deleteArticle()" style="display:none">Sil</button>
-            <button class="bo" style="font-size:.73rem;padding:.55rem 1.2rem" onclick="adminTab('arts')">İptal</button>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu2_title">B.Sc. Business Informatics</h4>
+              <h5 data-i18n="edu2_period">2022 – 2025</h5>
+              <p class="company">University of Bamberg, Germany</p>
+              <ul>
+                <li data-i18n="edu2_b1">Focus: Data Science &amp; Data Analytics</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu3_title">B.Sc. Industrial Engineering</h4>
+              <h5 data-i18n="edu3_period">2017 – 2019</h5>
+              <p class="company">Turkish-German University, Turkey</p>
+            </div>
+
+            <div class="resume-item">
+              <h4 data-i18n="edu4_title">German Language Preparatory (Vorstudium)</h4>
+              <h5 data-i18n="edu4_period">2017 – 2018</h5>
+              <p class="company">Turkish-German University, Turkey</p>
+            </div>
+
+            <h3 class="resume-title" data-i18n="resume_certs">Zertifikate</h3>
+            <ul class="cert-list">
+              <li>
+                <a href="https://learn.microsoft.com/en-us/users/aliyevvusalsphzadp2-9647/credentials/9282d54b6d4c7883" target="_blank" rel="noopener">
+                  <img src="assets/img/Power-BI.png" alt="Power BI">
+                  <span data-i18n="cert1_title">Microsoft Power BI Data Analyst</span>
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <small data-i18n="cert1_info">Microsoft Certified: Power BI Data Analyst Associate</small>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/microsoftazure/0078D4" alt="Azure">
+                  <span data-i18n="cert2_title">Microsoft Azure Fundamentals (AZ-900)</span>
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <small data-i18n="cert2_info">Microsoft Certified: Azure Fundamentals</small>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/google/4285F4" alt="Google">
+                  <span data-i18n="cert3_title">Google Data Analytics Certificate</span>
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <small data-i18n="cert3_info">Google / Coursera</small>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener">
+                  <img src="https://cdn.simpleicons.org/ibm/0530AD" alt="IBM">
+                  <span data-i18n="cert4_title">IBM Data Science Professional Certificate</span>
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <small data-i18n="cert4_info">IBM / Coursera</small>
+              </li>
+              <li>
+                <a href="#" target="_blank" rel="noopener">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+                  <span data-i18n="cert5_title">Python for Everybody</span>
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <small data-i18n="cert5_info">University of Michigan / Coursera</small>
+              </li>
+              <li>
+                <a href="https://learn.microsoft.com/en-us/users/aliyevvusalsphzadp2-9647/credentials/9282d54b6d4c7883" target="_blank" rel="noopener">
+                  <img src="assets/img/ms_fabric_data_16_color.png" alt="Fabric">
+                  <span data-i18n="cert6_title">Microsoft Fabric Data Engineer Associate</span>
+                  <i class="bx bx-link-external"></i>
+                </a>
+                <small data-i18n="cert6_info">Ausgestellt Dez 2025 • Credential ID: 9282D54B6D4C7883</small>
+              </li>
+            </ul>
+
           </div>
         </div>
       </div>
-      <!-- RANDEVULAR -->
-      <div id="atab-appts" style="display:none">
-        <div class="admin-hd">
-          <h2>Randevular</h2>
-          <div style="display:flex;gap:.7rem">
-            <button class="save-btn" onclick="exportAppts()">CSV İndir</button>
-            <button class="del-btn" onclick="clearAppts()">Tümünü Sil</button>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="portfolio">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_projects">Projekte</h2>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+
+          <!-- Project: Sales Performance Dashboard -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Projects_pictures/Pollmeier_1.png" class="img-fluid" alt="Sales Performance Dashboard" loading="lazy">
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" data-i18n="proj1_title">Sales Performance Dashboard</a>
+                <div class="project-tags">
+                  <span class="project-tag">Power BI</span>
+                  <span class="project-tag">DAX</span>
+                  <span class="project-tag">Data Modeling</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="assets/img/Projects_pictures/Pollmeier_1.png" title="Preview"><i class="bx bx-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: Automation Tool -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Projects_pictures/Pollmeier_2.png" class="img-fluid" alt="Automation Tool" loading="lazy">
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" data-i18n="proj2_title">Automation Tool – Profit Calculation</a>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">Excel</span>
+                  <span class="project-tag">Automation</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="assets/img/Projects_pictures/Pollmeier_2.png" title="Preview"><i class="bx bx-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: Pollmeier Power BI -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <div id="project3Carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="assets/img/Projects_pictures/Pollmeier_1.png" class="img-fluid" alt="Pollmeier 1" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/Pollmeier_2.png" class="img-fluid" alt="Pollmeier 2" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/Pollmeier_3.png" class="img-fluid" alt="Pollmeier 3" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/Pollmeier_4.png" class="img-fluid" alt="Pollmeier 4" loading="lazy"></div>
+                </div>
+                <a class="carousel-control-prev" href="#project3Carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                <a class="carousel-control-next" href="#project3Carousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+              </div>
+              <div class="portfolio-info">
+                <a href="assets/Pro/Pollmeier.pbix" download data-i18n="proj3_title">Pollmeier – Power BI Dashboard</a>
+                <div class="project-tags">
+                  <span class="project-tag">Power BI</span>
+                  <span class="project-tag">Quality Management</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="assets/img/Projects_pictures/Pollmeier_1.png" title="Preview"><i class="bx bx-zoom-in"></i></a>
+                  <a href="assets/Pro/Pollmeier.pbix" download title="Download"><i class="bx bx-download"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: WIAI -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <div id="project1Carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="assets/img/Projects_pictures/WIAI_Uberblick.png" class="img-fluid" alt="WIAI 1" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/Studierenden_Entwicklung.png" class="img-fluid" alt="WIAI 2" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/Abschlussanlyse.png" class="img-fluid" alt="WIAI 3" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/Statistischen_Visio.png" class="img-fluid" alt="WIAI 4" loading="lazy"></div>
+                </div>
+                <a class="carousel-control-prev" href="#project1Carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                <a class="carousel-control-next" href="#project1Carousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+              </div>
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" data-i18n="proj4_title">WIAI – University Analysis</a>
+                <div class="project-tags">
+                  <span class="project-tag">Data Analysis</span>
+                  <span class="project-tag">Visualization</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="assets/img/Projects_pictures/WIAI_Uberblick.png" title="Preview"><i class="bx bx-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: AKIPAS -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <div id="project2Carousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active"><img src="assets/img/Projects_pictures/AKIPAS_1.png" class="img-fluid" alt="AKIPAS 1" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/AKIPAS_2.png" class="img-fluid" alt="AKIPAS 2" loading="lazy"></div>
+                  <div class="carousel-item"><img src="assets/img/Projects_pictures/AKIPAS_3.png" class="img-fluid" alt="AKIPAS 3" loading="lazy"></div>
+                </div>
+                <a class="carousel-control-prev" href="#project2Carousel" role="button" data-slide="prev"><span class="carousel-control-prev-icon"></span></a>
+                <a class="carousel-control-next" href="#project2Carousel" role="button" data-slide="next"><span class="carousel-control-next-icon"></span></a>
+              </div>
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener" data-i18n="proj5_title">AKIPAS – AI Production System</a>
+                <div class="project-tags">
+                  <span class="project-tag">AI</span>
+                  <span class="project-tag">Data Engineering</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="assets/img/Projects_pictures/AKIPAS_1.png" title="Preview"><i class="bx bx-zoom-in"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: Financial Reporting Pipeline -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Projects_pictures/financial_pipeline.png" class="img-fluid" alt="Financial Reporting Pipeline" loading="lazy" onerror="this.src='https://placehold.co/400x220/2563eb/ffffff?text=Financial+Pipeline'">
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih/financial-reporting-pipeline" target="_blank" rel="noopener" data-i18n="proj6_title">Financial Reporting Pipeline</a>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">pandas</span>
+                  <span class="project-tag">Excel</span>
+                  <span class="project-tag">Automation</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="https://github.com/demirtas-fatih/financial-reporting-pipeline" target="_blank" rel="noopener" title="GitHub"><i class="bx bxl-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: E-Commerce SQL Analysis -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Projects_pictures/ecommerce_analysis.png" class="img-fluid" alt="E-Commerce SQL Analysis" loading="lazy" onerror="this.src='https://placehold.co/400x220/0891b2/ffffff?text=E-Commerce+Analysis'">
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih/ecommerce-sql-analysis" target="_blank" rel="noopener" data-i18n="proj7_title">E-Commerce SQL Analysis</a>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">SQL</span>
+                  <span class="project-tag">SQLite</span>
+                  <span class="project-tag">seaborn</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="https://github.com/demirtas-fatih/ecommerce-sql-analysis" target="_blank" rel="noopener" title="GitHub"><i class="bx bxl-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project: Weather ETL Pipeline -->
+          <div class="col-lg-4 col-md-6 portfolio-item">
+            <div class="portfolio-wrap">
+              <img src="assets/img/Projects_pictures/weather_etl.png" class="img-fluid" alt="Weather ETL Pipeline" loading="lazy" onerror="this.src='https://placehold.co/400x220/7c3aed/ffffff?text=Weather+ETL+Pipeline'">
+              <div class="portfolio-info">
+                <a href="https://github.com/demirtas-fatih/weather-etl-pipeline" target="_blank" rel="noopener" data-i18n="proj8_title">Weather ETL Pipeline</a>
+                <div class="project-tags">
+                  <span class="project-tag">Python</span>
+                  <span class="project-tag">ETL</span>
+                  <span class="project-tag">API</span>
+                  <span class="project-tag">Streamlit</span>
+                </div>
+                <div class="portfolio-links mt-2">
+                  <a href="https://github.com/demirtas-fatih/weather-etl-pipeline" target="_blank" rel="noopener" title="GitHub"><i class="bx bxl-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2 data-i18n="nav_contact">Kontakt</h2>
+        </div>
+        <div class="contact-card">
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bx bx-mail-send"></i></div>
+            <a href="mailto:fatihdemirtask@gmail.com">fatihdemirtask@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bx bx-phone"></i></div>
+            <span>+49 178 3316422</span>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bx bxl-linkedin"></i></div>
+            <a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener">linkedin.com/in/fatih-demirtas47</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bx bxl-github"></i></div>
+            <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener">github.com/demirtas-fatih</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon"><i class="bx bx-map"></i></div>
+            <span>Bamberg, Germany</span>
           </div>
         </div>
-        <div id="admin-appts-full"></div>
       </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="container">
+      <h3>Fatih Demirtas</h3>
+      <div class="social-links">
+        <a href="https://github.com/demirtas-fatih" target="_blank" rel="noopener"><i class="bx bxl-github"></i></a>
+        <a href="https://www.linkedin.com/in/fatih-demirtas47/" target="_blank" rel="noopener"><i class="bx bxl-linkedin"></i></a>
+        <a href="mailto:fatihdemirtask@gmail.com"><i class="bx bx-mail-send"></i></a>
+      </div>
+      <div class="copyright">© 2025 <strong><span>Fatih Demirtas</span></strong>. <span data-i18n="footer_rights">Alle Rechte vorbehalten.</span></div>
     </div>
-  </div>
-</div>
+  </footer>
 
-<div class="toast" id="toast"></div>
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+  <div id="preloader" aria-hidden="true"></div>
 
-<script>
-// ─── STATE ───────────────────────────────────────────────────────
-let lang='tr', artFilter='all';
-let articles=[], appointments=[];
-const ARTS_KEY='ee_arts_v2', APPTS_KEY='ee_appts_v2';
+  <!-- Vendor JS -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery.easing@1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="assets/js/main.js"></script>
 
-// ─── i18n ────────────────────────────────────────────────────────
-const T={
-  tr:{
-    badge:'Hukuk Bürosu',
-    title:'Haklarınız için <em>güçlü bir</em> savunuculuk',
-    desc:'Müvekkillerime kişiselleştirilmiş, çözüm odaklı hizmet sunarak hukuki süreçlerin her adımında yanlarında oluyorum.',
-    btn1:'Randevu Al', btn2:'Daha Fazlası', role:'Avukat · Hukukçu',
-    syear:'Yıl', scase:'Dava', swin:'Başarı',
-    abtag:'Hakkımda', abtitle:'Adalete inancımla hizmetinizde',
-    abp1:'İstanbul Üniversitesi Hukuk Fakültesi\'nden mezun olduktan sonra 12 yılı aşkın sürede edindiğim deneyimle iş hukuku, aile hukuku ve tüketici hakları alanlarında uzmanlaştım.',
-    abp2:'Her müvekkili bireysel olarak değerlendiriyor, karmaşık hukuki süreçleri anlaşılır bir dille aktarıyor ve en iyi sonucu elde etmek için kararlılıkla çalışıyorum.',
-    abcta:'Ön Görüşme Talep Et',
-    explist:['İş ve İşçi Hukuku','Aile ve Boşanma Hukuku','Tüketici Hakları','Miras Hukuku','Kira ve Tahliye Davaları','Sözleşmeler Hukuku','İcra ve İflas Hukuku'],
-    bltag:'Makaleler', bltitle:'Hukuki bilgi, herkes için', filterAll:'Tümü',
-    aptag:'Randevu', aptitle:'Görüşme ayarlayalım',
-    apsub:'İlk görüşme ücretsizdir. Size en kısa sürede dönüş yapacağım.',
-    addrl:'Adres', tell:'Telefon', maill:'E-Posta', hoursl:'Çalışma Saatleri',
-    hours:'Pzt–Cum: 09:00–18:00<br>Cumartesi: 10:00–14:00',
-    fn:'Ad', sn:'Soyad', ph:'Telefon', em:'E-Posta', dt:'Tarih', tm:'Saat', tp:'Konu', nt:'Açıklama',
-    sbtn:'Randevu Talebi Gönder', succ_h:'Talebiniz Alındı', succ_p:'En geç 24 saat içinde sizi arayacağız.',
-    nav:['Ana Sayfa','Hakkımda','Makaleler','Randevu'], back:'← Makaleler',
-  },
-  en:{
-    badge:'Law Office',
-    title:'Strong advocacy <em>for your rights</em>',
-    desc:'I provide personalized, solution-focused legal services and stand by my clients at every step of the process.',
-    btn1:'Book Appointment', btn2:'Learn More', role:'Attorney · Lawyer',
-    syear:'Years', scase:'Cases', swin:'Success',
-    abtag:'About', abtitle:'Serving you with a commitment to justice',
-    abp1:'After graduating from Istanbul University Faculty of Law, I have over 12 years of experience specializing in labour law, family law, and consumer rights.',
-    abp2:'I evaluate each client individually, explain complex legal processes in understandable terms, and work with determination to achieve the best results.',
-    abcta:'Request Consultation',
-    explist:['Labour & Employment Law','Family & Divorce Law','Consumer Rights','Inheritance Law','Tenancy & Eviction','Contract Law','Enforcement & Insolvency'],
-    bltag:'Articles', bltitle:'Legal knowledge, for everyone', filterAll:'All',
-    aptag:'Appointment', aptitle:"Let's arrange a meeting",
-    apsub:'First consultation is free. I\'ll get back to you as soon as possible.',
-    addrl:'Address', tell:'Phone', maill:'Email', hoursl:'Working Hours',
-    hours:'Mon–Fri: 09:00–18:00<br>Saturday: 10:00–14:00',
-    fn:'First Name', sn:'Last Name', ph:'Phone', em:'Email', dt:'Date', tm:'Time', tp:'Topic', nt:'Note',
-    sbtn:'Submit Appointment Request', succ_h:'Request Received', succ_p:"We'll contact you within 24 hours.",
-    nav:['Home','About','Articles','Appointment'], back:'← Articles',
-  }
-};
+  <!-- i18n -->
+  <script>
+    const translations = {
+      de: {
+        nav_home: "Startseite", nav_about: "Über mich", nav_skills: "Kenntnisse", nav_resume: "Lebenslauf", nav_projects: "Projekte", nav_contact: "Kontakt",
+        typed_items: ["Data Analyst", "BI-Spezialist", "Power BI Entwickler"],
+        about_title: "Junior Data Analyst & BI Spezialist",
+        about_text: "Motivierter Junior Data Analyst mit praktischer Erfahrung in Power BI, Python und Datenautomatisierung durch Werkstudentenstellen bei Siemens und Mercedes-Benz. Spezialisiert auf interaktive Dashboards, Datenmodellierung und die Automatisierung von Datenprozessen. Starke analytische Denkweise mit der Leidenschaft, Daten in verwertbare Erkenntnisse zu verwandeln.",
+        label_email: "E-Mail:", label_website: "Webseite:", label_city: "Stadt:", label_degree: "Abschluss:", label_phone: "Tel:",
+        about_city_val: "Bamberg, Deutschland", about_degree_val: "M.Sc. Data Science",
+        skills_core: "Kernkompetenzen", skills_frameworks: "Frameworks & Tools", skills_lang: "Sprachen",
+        resume_work: "Berufserfahrung", resume_education: "Bildung", resume_certs: "Zertifikate",
+        job1_title: "Working Student – Business Partner", job1_period: "01/2024 – Heute",
+        job1_b1: "Entwicklung interaktiver Power BI Dashboards mit Deneb (Vega-Lite).", job1_b2: "Aufbau relationaler Datenmodelle für Business Insights.", job1_b3: "Automatisierung finanzieller Prozesse mit Excel und Power Query; Reduzierung manueller Arbeit um ca. 30%.", job1_b4: "Integration von Daten aus mehreren Quellen (Qlik, interne Systeme).", job1_b5: "Erstellung API-basierter Abfragen in Azure DevOps.", job1_b6: "Automatisierung von Workflows mit Python.",
+        job2_title: "Working Student – Supplier Quality Management", job2_period: "03/2023 – 01/2024",
+        job2_b1: "Automatisierung von Geschäftsprozessen mit Power Automate.", job2_b2: "Erstellung Excel-basierter Abfragen und automatisierter Workflows.", job2_b3: "Entwicklung von Power BI Reports und Präsentation von Erkenntnissen für das Management.",
+        job3_title: "Working Student – Regional Unit", job3_period: "01/2023 – 07/2023",
+        job3_b1: "Unterstützung bei der Digitalisierung von Geschäftsprozessen.", job3_b2: "Implementierung von Automatisierungslösungen mit Power Automate.", job3_b3: "Verwaltung von SharePoint- und Dokumentationssystemen.",
+        edu1_title: "M.Sc. Data Science", edu1_period: "2025 – Heute",
+        edu2_title: "B.Sc. Wirtschaftsinformatik", edu2_period: "2022 – 2025", edu2_b1: "Schwerpunkt: Data Science & Data Analytics",
+        edu3_title: "B.Sc. Wirtschaftsingenieurwesen", edu3_period: "2017 – 2019",
+        edu4_title: "Deutsches Sprachvorbereitungsprogramm (Vorstudium)", edu4_period: "2017 – 2018",
+        cert1_title: "Microsoft Power BI Data Analyst", cert1_info: "Microsoft Certified: Power BI Data Analyst Associate",
+        cert2_title: "Microsoft Azure Fundamentals (AZ-900)", cert2_info: "Microsoft Certified: Azure Fundamentals",
+        cert3_title: "Google Data Analytics Certificate", cert3_info: "Google / Coursera",
+        cert4_title: "IBM Data Science Professional Certificate", cert4_info: "IBM / Coursera",
+        cert5_title: "Python for Everybody", cert5_info: "University of Michigan / Coursera",
+        cert6_title: "Microsoft Fabric Data Engineer Associate", cert6_info: "Ausgestellt Dez 2025 • Credential ID: 9282D54B6D4C7883",
+        proj1_title: "Sales Performance Dashboard", proj2_title: "Automation Tool – Gewinnkalkulation", proj3_title: "Pollmeier – Power BI Dashboard", proj4_title: "WIAI – Universitätsanalyse", proj5_title: "AKIPAS – KI Produktionssystem",
+        proj6_title: "Financial Reporting Pipeline", proj7_title: "E-Commerce SQL Analyse", proj8_title: "Weather ETL Pipeline",
+        footer_rights: "Alle Rechte vorbehalten."
+      },
+      en: {
+        nav_home: "Home", nav_about: "About", nav_skills: "Skills", nav_resume: "Resume", nav_projects: "Projects", nav_contact: "Contact",
+        typed_items: ["Data Analyst", "BI Specialist", "Power BI Developer"],
+        about_title: "Junior Data Analyst & BI Specialist",
+        about_text: "Motivated Junior Data Analyst with hands-on experience in Power BI, Python, and data automation through working student roles at Siemens and Mercedes-Benz. Skilled in building interactive dashboards, data modeling, and automating data processes. Strong analytical mindset with a passion for transforming data into actionable insights.",
+        label_email: "Email:", label_website: "Website:", label_city: "City:", label_degree: "Degree:", label_phone: "Phone:",
+        about_city_val: "Bamberg, Germany", about_degree_val: "M.Sc. Data Science",
+        skills_core: "Core Skills", skills_frameworks: "Frameworks & Tools", skills_lang: "Languages",
+        resume_work: "Work Experience", resume_education: "Education", resume_certs: "Certifications",
+        job1_title: "Working Student – Business Partner", job1_period: "01/2024 – Present",
+        job1_b1: "Developed interactive Power BI dashboards using Deneb (Vega-Lite).", job1_b2: "Built relational data models for business insights.", job1_b3: "Automated financial processes using Excel and Power Query, reducing manual workload by ~30%.", job1_b4: "Integrated data from multiple sources (Qlik, internal systems).", job1_b5: "Created API-based queries in Azure DevOps.", job1_b6: "Automated workflows using Python.",
+        job2_title: "Working Student – Supplier Quality Management", job2_period: "03/2023 – 01/2024",
+        job2_b1: "Automated business processes using Power Automate.", job2_b2: "Built Excel-based queries and automated workflows.", job2_b3: "Developed Power BI reports and presented insights to management.",
+        job3_title: "Working Student – Regional Unit", job3_period: "01/2023 – 07/2023",
+        job3_b1: "Supported digitalization of business processes.", job3_b2: "Implemented automation solutions using Power Automate.", job3_b3: "Managed SharePoint and documentation systems.",
+        edu1_title: "M.Sc. Data Science", edu1_period: "2025 – Present",
+        edu2_title: "B.Sc. Business Informatics", edu2_period: "2022 – 2025", edu2_b1: "Focus: Data Science & Data Analytics",
+        edu3_title: "B.Sc. Industrial Engineering", edu3_period: "2017 – 2019",
+        edu4_title: "German Language Preparatory Program (Vorstudium)", edu4_period: "2017 – 2018",
+        cert1_title: "Microsoft Power BI Data Analyst", cert1_info: "Microsoft Certified: Power BI Data Analyst Associate",
+        cert2_title: "Microsoft Azure Fundamentals (AZ-900)", cert2_info: "Microsoft Certified: Azure Fundamentals",
+        cert3_title: "Google Data Analytics Certificate", cert3_info: "Google / Coursera",
+        cert4_title: "IBM Data Science Professional Certificate", cert4_info: "IBM / Coursera",
+        cert5_title: "Python for Everybody", cert5_info: "University of Michigan / Coursera",
+        cert6_title: "Microsoft Fabric Data Engineer Associate", cert6_info: "Issued Dec 2025 • Credential ID: 9282D54B6D4C7883",
+        proj1_title: "Sales Performance Dashboard", proj2_title: "Automation Tool – Profit Calculation", proj3_title: "Pollmeier – Power BI Dashboard", proj4_title: "WIAI – University Analysis", proj5_title: "AKIPAS – AI Production System",
+        proj6_title: "Financial Reporting Pipeline", proj7_title: "E-Commerce SQL Analysis", proj8_title: "Weather ETL Pipeline",
+        footer_rights: "All Rights Reserved."
+      }
+    };
 
-// ─── DEFAULT ARTICLES ────────────────────────────────────────────
-const defaultArticles=[
-  {id:1,catTr:'İş Hukuku',catEn:'Labour Law',
-   titleTr:'Kıdem Tazminatı Hakkınızı Nasıl Alırsınız?',titleEn:'How to Claim Your Severance Pay?',
-   sumTr:'İş sözleşmesi sona erdirilen çalışanların kıdem tazminatı talep etme şartları ve dikkat edilmesi gereken süreler.',
-   sumEn:'Conditions for claiming severance pay and important deadlines for employees whose contracts are terminated.',
-   bodyTr:'İş sözleşmesinin sona ermesi durumunda kıdem tazminatı hakkı, 4857 sayılı İş Kanunu kapsamında düzenlenmektedir.\n\nKıdem tazminatına hak kazanabilmek için işçinin en az bir yıl aynı işyerinde çalışmış olması gerekmektedir.\n\nİşverenin işçiyi haksız olarak işten çıkarması durumunda kıdem ve ihbar tazminatı talep edilebilir. Bu süreçte iş mahkemelerine başvurulabilir.\n\nDava açma süresi, işten çıkarma tarihinden itibaren 2 yıl olup bu süre kaçırılmamalıdır.',
-   bodyEn:'The right to severance pay upon termination of an employment contract is regulated under Labour Law No. 4857.\n\nTo be entitled to severance pay, the employee must have worked in the same workplace for at least one year.\n\nIf the employer dismisses the employee unfairly, both severance and notice pay can be claimed. Labour courts can be applied to in this process.\n\nThe statute of limitations is 2 years from the date of dismissal and must not be missed.',
-   icon:'⚖️',bg:'#EEF2F8',date:'2026-04-15'},
-  {id:2,catTr:'Aile Hukuku',catEn:'Family Law',
-   titleTr:'Boşanma Sürecinde Mal Paylaşımı',titleEn:'Asset Division in Divorce Proceedings',
-   sumTr:'Eşlerin edinilmiş mallara katılma rejimi kapsamında mal varlıklarının nasıl paylaşıldığını anlatan kapsamlı rehber.',
-   sumEn:'A comprehensive guide on how assets are divided under the acquired property participation regime.',
-   bodyTr:'Türk Medeni Kanunu\'na göre evlilik birliği içinde edinilen mallar, boşanma davası sonucunda eşit olarak paylaşılır.\n\nEdilmiş mallara katılma rejimi, yasal mal rejimidir. Evlilikten önce sahip olunan mallar ve miras yoluyla edinilen mallar bu rejimin dışındadır.\n\nMal paylaşımı davası boşanma davasından ayrı açılabileceği gibi birlikte de görülebilir.',
-   bodyEn:'According to the Turkish Civil Code, assets acquired during the marriage are divided equally upon divorce.\n\nThe acquired property participation regime is the legal property regime. Assets owned before marriage and those acquired through inheritance are excluded.\n\nThe asset division case can be filed separately from the divorce case or heard together.',
-   icon:'👨‍👩‍👧',bg:'#F8F0EE',date:'2026-03-02'},
-  {id:3,catTr:'Tüketici Hakları',catEn:'Consumer Rights',
-   titleTr:'Ayıplı Ürün Aldınız mı? Haklarınız',titleEn:'Purchased a Defective Product? Your Rights',
-   sumTr:'Tüketici hakem heyetine başvuru, garanti kapsamı ve iade prosedürleri hakkında bilmeniz gerekenler.',
-   sumEn:'What you need to know about applying to consumer arbitration, warranty coverage, and return procedures.',
-   bodyTr:'6502 sayılı Tüketicinin Korunması Hakkında Kanun, tüketicilere kapsamlı haklar tanımaktadır.\n\nAyıplı mal tesliminde tüketici; ücretsiz onarım, malın ayıpsız misliyle değiştirilmesi, bedel iadesi veya bedelden indirim taleplerinden birini seçme hakkına sahiptir.\n\nTüketici hakem heyetine başvuru ücretsiz ve kolaydır. Bağlı bulunduğunuz il veya ilçe kaymakamlığına başvurabilirsiniz.',
-   bodyEn:'Law No. 6502 on Consumer Protection grants consumers comprehensive rights.\n\nUpon delivery of a defective product, the consumer may choose: free repair, replacement with a non-defective equivalent, refund, or price reduction.\n\nApplying to consumer arbitration committees is free and easy. You can apply to the governorship of your province or district.',
-   icon:'🛒',bg:'#EEF8F2',date:'2026-02-18'},
-];
+    let currentLang = localStorage.getItem('portfolio_lang') || 'de';
+    let typedInstance = null;
 
-// ─── STORAGE (localStorage) ──────────────────────────────────────
-function loadData(){
-  try{ const d=localStorage.getItem(ARTS_KEY); articles=d?JSON.parse(d):[...defaultArticles]; }
-  catch(e){ articles=[...defaultArticles]; }
-  try{ const d=localStorage.getItem(APPTS_KEY); appointments=d?JSON.parse(d):[]; }
-  catch(e){ appointments=[]; }
-  renderArticles(); renderAdminDash(); renderAdminArts(); renderAdminAppts();
-}
-function saveArts(){ try{localStorage.setItem(ARTS_KEY,JSON.stringify(articles));}catch(e){} }
-function saveAppts(){ try{localStorage.setItem(APPTS_KEY,JSON.stringify(appointments));}catch(e){} }
+    function setLang(lang) {
+      currentLang = lang;
+      localStorage.setItem('portfolio_lang', lang);
+      document.documentElement.lang = lang;
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      document.getElementById('btn-' + lang).classList.add('active');
+      const t = translations[lang];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) el.textContent = t[key];
+      });
+      const typedEl = document.getElementById('typed-el');
+      if (typedEl && window.Typed) {
+        if (typedInstance) typedInstance.destroy();
+        typedEl.textContent = '';
+        typedInstance = new Typed('#typed-el', { strings: t.typed_items, typeSpeed: 55, backSpeed: 35, backDelay: 1400, loop: true });
+      }
+    }
 
-// ─── NAVIGATION ──────────────────────────────────────────────────
-function go(id){
-  document.querySelectorAll('.pg').forEach(p=>p.classList.remove('on'));
-  document.getElementById(id).classList.add('on');
-  document.querySelectorAll('.topnav a').forEach(a=>a.classList.remove('cur'));
-  const m={'pg-home':'nav-home','pg-about':'nav-about','pg-articles':'nav-articles','pg-appt':'nav-appt'};
-  if(m[id]) document.getElementById(m[id]).classList.add('cur');
-  if(id==='pg-articles') renderArticles();
-  if(id==='pg-admin') adminTab('dash');
-  window.scrollTo(0,0);
-}
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () { setLang(currentLang); }, 150);
+    });
+  </script>
 
-// ─── LANGUAGE ─────────────────────────────────────────────────────
-function setLang(l){
-  lang=l;
-  document.getElementById('lb-tr').classList.toggle('on',l==='tr');
-  document.getElementById('lb-en').classList.toggle('on',l==='en');
-  const t=T[l];
-  document.getElementById('h-badge').textContent=t.badge;
-  document.getElementById('h-title').innerHTML=t.title;
-  document.getElementById('h-desc').textContent=t.desc;
-  document.getElementById('h-btn1').textContent=t.btn1;
-  document.getElementById('h-btn2').textContent=t.btn2;
-  document.getElementById('h-role').textContent=t.role;
-  document.getElementById('s-year').textContent=t.syear;
-  document.getElementById('s-case').textContent=t.scase;
-  document.getElementById('s-win').textContent=t.swin;
-  document.getElementById('ab-tag').firstChild.nodeValue=t.abtag;
-  document.getElementById('ab-title').innerHTML=t.abtitle;
-  document.getElementById('ab-p1').textContent=t.abp1;
-  document.getElementById('ab-p2').textContent=t.abp2;
-  document.getElementById('ab-cta').textContent=t.abcta;
-  const el=document.getElementById('exp-list');
-  el.innerHTML=t.explist.map(i=>`<li>${i}</li>`).join('');
-  document.getElementById('bl-title').textContent=t.bltitle;
-  document.getElementById('ap-title').textContent=t.aptitle;
-  document.getElementById('ap-sub').textContent=t.apsub;
-  document.getElementById('ap-addr-l').textContent=t.addrl;
-  document.getElementById('ap-tel-l').textContent=t.tell;
-  document.getElementById('ap-mail-l').textContent=t.maill;
-  document.getElementById('ap-hours-l').textContent=t.hoursl;
-  document.getElementById('ap-hours').innerHTML=t.hours;
-  document.getElementById('lbl-name').textContent=t.fn;
-  document.getElementById('lbl-sur').textContent=t.sn;
-  document.getElementById('lbl-phone').textContent=t.ph;
-  document.getElementById('lbl-email').textContent=t.em;
-  document.getElementById('lbl-date').textContent=t.dt;
-  document.getElementById('lbl-time').textContent=t.tm;
-  document.getElementById('lbl-topic').textContent=t.tp;
-  document.getElementById('lbl-note').textContent=t.nt;
-  document.getElementById('submit-btn').textContent=t.sbtn;
-  document.getElementById('succ-h').textContent=t.succ_h;
-  document.getElementById('succ-p').textContent=t.succ_p;
-  ['nav-home','nav-about','nav-articles','nav-appt'].forEach((id,i)=>{
-    document.getElementById(id).textContent=t.nav[i];
-  });
-  renderArticles();
-}
-
-// ─── ARTICLES ────────────────────────────────────────────────────
-function getCategories(){
-  const s=new Set();
-  articles.forEach(a=>s.add(lang==='tr'?a.catTr:a.catEn));
-  return[...s];
-}
-
-function renderArticles(){
-  const grid=document.getElementById('art-grid');
-  const filters=document.getElementById('art-filters');
-  const cats=getCategories();
-  const t=T[lang];
-  filters.innerHTML=`<button class="filt ${artFilter==='all'?'on':''}" onclick="setFilter('all')">${t.filterAll}</button>`
-    +cats.map(c=>`<button class="filt ${artFilter===c?'on':''}" onclick="setFilter('${c.replace(/'/g,"\\'")}')">${c}</button>`).join('');
-  const vis=artFilter==='all'?articles:articles.filter(a=>(lang==='tr'?a.catTr:a.catEn)===artFilter);
-  if(vis.length===0){grid.innerHTML=`<p style="color:var(--muted);font-size:.88rem;grid-column:1/-1;padding:2rem 0">Henüz makale yok.</p>`;return;}
-  grid.innerHTML=vis.map(a=>`
-    <div class="ac" onclick="showArticle(${a.id})">
-      <div class="ac-img" style="background:${a.bg}">${a.icon}</div>
-      <div class="ac-body">
-        <div class="ac-cat">${lang==='tr'?a.catTr:a.catEn}</div>
-        <h4>${lang==='tr'?a.titleTr:a.titleEn}</h4>
-        <p>${lang==='tr'?a.sumTr:a.sumEn}</p>
-        <div class="ac-date">${fmtDate(a.date)}</div>
-      </div>
-    </div>`).join('');
-}
-
-function setFilter(f){artFilter=f;renderArticles();}
-
-function showArticle(id){
-  const a=articles.find(x=>x.id===id);if(!a)return;
-  const title=lang==='tr'?a.titleTr:a.titleEn;
-  const cat=lang==='tr'?a.catTr:a.catEn;
-  const body=lang==='tr'?a.bodyTr:a.bodyEn;
-  const paras=(body||'').split(/\n+/).filter(Boolean).map(p=>`<p>${p}</p>`).join('');
-  document.getElementById('art-detail-content').innerHTML=`
-    <div class="art-detail-back" onclick="go('pg-articles')">${T[lang].back}</div>
-    <div class="art-detail-cat">${cat}</div>
-    <h2>${title}</h2>
-    <div class="art-detail-meta">Av. Elif Eren · ${fmtDate(a.date)}</div>
-    <div class="art-detail-body">${paras}</div>`;
-  go('pg-article-detail');
-}
-
-function fmtDate(d){
-  if(!d)return'';
-  const dd=new Date(d);
-  return lang==='tr'
-    ?dd.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric'})
-    :dd.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-}
-
-// ─── APPOINTMENT ─────────────────────────────────────────────────
-function submitAppt(){
-  const n=document.getElementById('f-name').value.trim();
-  const s=document.getElementById('f-sur').value.trim();
-  const p=document.getElementById('f-phone').value.trim();
-  const e=document.getElementById('f-email').value.trim();
-  const t=document.getElementById('f-topic').value;
-  if(!n||!s||!p||!e||!t){toast(lang==='tr'?'Lütfen zorunlu alanları doldurunuz.':'Please fill all required fields.');return;}
-  const appt={
-    id:Date.now(), name:n+' '+s, phone:p, email:e,
-    date:document.getElementById('f-date').value,
-    time:document.getElementById('f-time').value,
-    topic:t, note:document.getElementById('f-note').value,
-    status:'new', created:new Date().toISOString()
-  };
-  appointments.unshift(appt); saveAppts();
-  document.getElementById('apptForm').style.display='none';
-  document.getElementById('apptSuccess').classList.add('on');
-  renderAdminDash(); renderAdminAppts();
-}
-
-// ─── ADMIN ───────────────────────────────────────────────────────
-function adminTab(tab){
-  ['dash','arts','new','appts'].forEach(t=>{
-    document.getElementById('atab-'+t).style.display=t===tab?'block':'none';
-    document.getElementById('as-'+t).classList.toggle('on',t===tab);
-  });
-  if(tab==='dash') renderAdminDash();
-  if(tab==='arts') renderAdminArts();
-  if(tab==='appts') renderAdminAppts();
-  if(tab==='new') resetEditor();
-}
-
-function renderAdminDash(){
-  const today=new Date().toDateString();
-  const todayN=appointments.filter(a=>new Date(a.created).toDateString()===today).length;
-  document.getElementById('dash-grid').innerHTML=`
-    <div class="dash-card"><div class="dn">${articles.length}</div><div class="dl">Toplam Makale</div></div>
-    <div class="dash-card"><div class="dn">${appointments.length}</div><div class="dl">Toplam Randevu</div></div>
-    <div class="dash-card"><div class="dn">${todayN}</div><div class="dl">Bugün Gelen</div></div>
-    <div class="dash-card"><div class="dn">${appointments.filter(a=>a.status==='new').length}</div><div class="dl">Bekleyen</div></div>`;
-  const mini=document.getElementById('admin-appts-mini');
-  if(appointments.length===0){mini.innerHTML='<p style="color:var(--muted);font-size:.85rem">Henüz randevu yok.</p>';return;}
-  mini.innerHTML=apptTable(appointments.slice(0,5));
-}
-
-function renderAdminArts(){
-  const list=document.getElementById('art-admin-list');
-  if(articles.length===0){list.innerHTML='<p style="color:var(--muted);font-size:.85rem">Henüz makale yok.</p>';return;}
-  list.innerHTML=articles.map(a=>`
-    <div class="art-admin-item">
-      <div style="flex:1"><h5>${a.titleTr}</h5><span>${a.catTr} · ${fmtDate(a.date)}</span></div>
-      <div class="art-admin-actions">
-        <button class="edit-btn" onclick="editArticle(${a.id})">Düzenle</button>
-        <button class="del-btn" onclick="deleteArticleById(${a.id})">Sil</button>
-      </div>
-    </div>`).join('');
-}
-
-function renderAdminAppts(){
-  const el=document.getElementById('admin-appts-full');if(!el)return;
-  if(appointments.length===0){el.innerHTML='<p style="color:var(--muted);font-size:.85rem">Henüz randevu yok.</p>';return;}
-  el.innerHTML=apptTable(appointments);
-}
-
-function apptTable(list){
-  return`<table class="appt-table"><thead><tr>
-    <th>Ad Soyad</th><th>Telefon</th><th>E-Posta</th><th>Konu</th><th>Tarih / Saat</th><th>Durum</th>
-  </tr></thead><tbody>${list.map(a=>`<tr>
-    <td>${a.name}</td><td>${a.phone}</td><td>${a.email}</td><td>${a.topic}</td>
-    <td>${a.date||'-'}${a.time?' '+a.time:''}</td>
-    <td><span class="badge ${a.status==='new'?'badge-new':'badge-done'}" style="cursor:pointer" onclick="toggleStatus(${a.id})">${a.status==='new'?'Yeni':'Görüldü'}</span></td>
-  </tr>`).join('')}</tbody></table>`;
-}
-
-function toggleStatus(id){
-  const a=appointments.find(x=>x.id===id);if(!a)return;
-  a.status=a.status==='new'?'done':'new';
-  saveAppts(); renderAdminDash(); renderAdminAppts();
-}
-
-function clearAppts(){
-  if(!confirm('Tüm randevular silinecek. Emin misiniz?'))return;
-  appointments=[];saveAppts();renderAdminDash();renderAdminAppts();toast('Randevular temizlendi.');
-}
-
-function exportAppts(){
-  if(appointments.length===0){toast('Henüz randevu yok.');return;}
-  const rows=[['Ad Soyad','Telefon','E-Posta','Konu','Tarih','Saat','Durum','Tarih']];
-  appointments.forEach(a=>rows.push([a.name,a.phone,a.email,a.topic,a.date||'',a.time||'',a.status,a.created.split('T')[0]]));
-  const csv=rows.map(r=>r.map(c=>`"${(c||'').replace(/"/g,'""')}"`).join(',')).join('\n');
-  const blob=new Blob(['\uFEFF'+csv],{type:'text/csv;charset=utf-8;'});
-  const url=URL.createObjectURL(blob);
-  const link=document.createElement('a');link.href=url;link.download='randevular.csv';link.click();
-  URL.revokeObjectURL(url);
-}
-
-// ─── ARTICLE EDITOR ──────────────────────────────────────────────
-function resetEditor(){
-  document.getElementById('edit-id').value='';
-  document.getElementById('editor-title').textContent='Yeni Makale';
-  ['e-title-tr','e-title-en','e-sum-tr','e-sum-en','e-body-tr','e-body-en'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('e-icon').value='⚖️';
-  document.getElementById('del-art-btn').style.display='none';
-}
-
-function editArticle(id){
-  const a=articles.find(x=>x.id===id);if(!a)return;
-  adminTab('new');
-  document.getElementById('edit-id').value=a.id;
-  document.getElementById('editor-title').textContent='Makaleyi Düzenle';
-  document.getElementById('e-title-tr').value=a.titleTr;
-  document.getElementById('e-title-en').value=a.titleEn;
-  document.getElementById('e-sum-tr').value=a.sumTr;
-  document.getElementById('e-sum-en').value=a.sumEn;
-  document.getElementById('e-body-tr').value=a.bodyTr;
-  document.getElementById('e-body-en').value=a.bodyEn;
-  document.getElementById('e-icon').value=a.icon;
-  const catTrSel=document.getElementById('e-cat-tr');
-  for(let o of catTrSel.options) if(o.text===a.catTr){catTrSel.value=o.value;break;}
-  const catEnSel=document.getElementById('e-cat-en');
-  for(let o of catEnSel.options) if(o.text===a.catEn){catEnSel.value=o.value;break;}
-  const bgSel=document.getElementById('e-bg');
-  for(let o of bgSel.options) if(o.value===a.bg){bgSel.value=o.value;break;}
-  document.getElementById('del-art-btn').style.display='inline-block';
-}
-
-function saveArticle(){
-  const tid=document.getElementById('edit-id').value;
-  const titleTr=document.getElementById('e-title-tr').value.trim();
-  const titleEn=document.getElementById('e-title-en').value.trim();
-  if(!titleTr||!titleEn){toast('Başlık alanları zorunlu.');return;}
-  const data={
-    id:tid?parseInt(tid):Date.now(),
-    catTr:document.getElementById('e-cat-tr').value,
-    catEn:document.getElementById('e-cat-en').value,
-    titleTr,titleEn,
-    sumTr:document.getElementById('e-sum-tr').value,
-    sumEn:document.getElementById('e-sum-en').value,
-    bodyTr:document.getElementById('e-body-tr').value,
-    bodyEn:document.getElementById('e-body-en').value,
-    icon:document.getElementById('e-icon').value||'⚖️',
-    bg:document.getElementById('e-bg').value,
-    date:new Date().toISOString().split('T')[0],
-  };
-  if(tid){const i=articles.findIndex(x=>x.id===data.id);if(i>-1)articles[i]=data;}
-  else articles.unshift(data);
-  saveArts(); renderAdminArts(); renderAdminDash();
-  toast('Makale kaydedildi ✓'); adminTab('arts');
-}
-
-function deleteArticle(){
-  const tid=parseInt(document.getElementById('edit-id').value);
-  deleteArticleById(tid); adminTab('arts');
-}
-
-function deleteArticleById(id){
-  if(!confirm('Bu makaleyi silmek istediğinize emin misiniz?'))return;
-  articles=articles.filter(a=>a.id!==id);
-  saveArts(); renderAdminArts(); renderAdminDash(); toast('Makale silindi.');
-}
-
-// ─── TOAST ───────────────────────────────────────────────────────
-function toast(msg){
-  const el=document.getElementById('toast');
-  el.textContent=msg; el.classList.add('show');
-  setTimeout(()=>el.classList.remove('show'),2800);
-}
-
-// ─── INIT ────────────────────────────────────────────────────────
-loadData();
-</script>
 </body>
 </html>
