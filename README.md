@@ -10,7 +10,7 @@ Statische Portfolio-Website mit mehrsprachiger Unterstützung (Deutsch, Englisch
 
 ## Funktionen
 
-- Dreisprachige Benutzeroberfläche (DE / EN / AZ)
+- Zweisprachige Benutzeroberfläche (DE / EN)
 - Projektgalerie mit Power BI Dashboards
 - Kenntnisse & Tools Übersicht
 - Lebenslauf-Sektion
